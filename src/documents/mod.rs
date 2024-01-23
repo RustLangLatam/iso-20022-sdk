@@ -83,7 +83,7 @@ pub mod tsmt;
 pub mod tsrv;
 
 // default xmlns prefix for iso-20022 documents
-const DEFAULT_XLMNS_PREFIX: &str = "urn:iso:std:iso:20022:tech:xsd:";
+pub(crate) const DEFAULT_XLMNS_PREFIX: &str = "urn:iso:std:iso:20022:tech:xsd:";
 
 /// Document Marker (Dmkr) is a type that is used as a default value
 /// for `any` element types. It effectively is a default document type.

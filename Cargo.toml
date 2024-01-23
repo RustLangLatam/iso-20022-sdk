@@ -1,6 +1,6 @@
 [package]
 name = "iso-20022-sdk"
-version = "0.1.10-dev.1"
+version = "0.1.10-dev.2"
 authors = ["ProxymaX Development Team", "Eleazar Garrido <rust.lang.latam@gmail.com>"]
 repository = "https://gitlab.com/proximax-latam/ncore"
 homepage = "https://www.proximax.io"

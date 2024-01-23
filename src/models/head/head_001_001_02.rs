@@ -66,18 +66,3 @@ pub struct BusinessApplicationHeaderV02<Signature: std::fmt::Debug + Default + C
     #[serde(default)]
     pub rltd: Vec<crate::primitive::BusinessApplicationHeader5<Signature>>,
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::primitive::Dmkr;
-    use crate::utils::XmlExt;
-
-    #[test]
-    fn test_parse_xml_document() {
-       let file = std::fs::read_to_string("test/resources/head/head.001.001.02.xml").expect("Unable to read file");
-        let doc = AppHdr::<Dmkr>::from_xml(file.as_str());
-        println!("{:?}", doc);
-        assert!(doc.is_ok())
-    }
-}

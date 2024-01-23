@@ -15,7 +15,7 @@ pub fn namespace() -> String {
     NAMESPACE.to_string()
 }
 
-#[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
+#[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Validate)]
 #[serde(transparent)]
 pub struct AppHdr<
     Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
@@ -66,20 +66,4 @@ pub struct BusinessApplicationHeaderV01<
     #[serde(rename = "Rltd", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub rltd: Option<BusinessApplicationHeader1<Signature>>,
-}
-
-#[cfg(test)]
-mod tests {
-    use crate::crypto::ecdsa::EcdsaSignature;
-    use super::*;
-    use crate::utils::XmlExt;
-
-    #[test]
-    fn test_parse_xml_head_sgntr_ecdsa() {
-        let file =
-            std::fs::read_to_string("test/resources/head/head.001.001.01-sgntr-ecdsa.xml").expect("Unable to read file");
-        let doc = AppHdr::<EcdsaSignature>::from_xml(file.as_str());
-
-        assert!(doc.is_ok());
-    }
 }

@@ -39,13 +39,13 @@ pub struct Object<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
     #[validate]
-    #[serde(flatten)]
+    #[serde(flatten, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, A>,
-    #[serde(rename = "@MimeType")]
+    #[serde(rename = "@MimeType", skip_serializing_if = "Option::is_none")]
     pub mime_type: Option<String>,
-    #[serde(rename = "@Encoding")]
+    #[serde(rename = "@Encoding", skip_serializing_if = "Option::is_none")]
     pub encoding: Option<String>,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
 }
 
@@ -56,7 +56,7 @@ pub struct SignatureMethod<
     #[serde(rename = "HMACOutputLength", skip_serializing_if = "Option::is_none")]
     pub hmac_output_length: Option<HmacOutputLengthType>,
     #[validate(length(min = 0,))]
-    #[serde(flatten, default)]
+    #[serde(flatten, default, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
     pub algorithm: String,
@@ -66,7 +66,7 @@ pub struct SignatureMethod<
 pub struct Transforms<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[serde(rename = "Transform", default)]
+    #[serde(rename = "Transform", default, skip_serializing_if = "Vec::is_empty")]
     pub transform: Vec<Transform<A>>,
 }
 
@@ -86,7 +86,7 @@ pub struct Transform<
 > {
     #[serde(flatten)]
     #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, TransformTypeEnum<A>>,
     #[serde(rename = "@Algorithm")]
     pub algorithm: String,
@@ -173,7 +173,7 @@ pub struct KeyInfo<
 > {
     #[serde(flatten)]
     pub value: KeyInfoTypeEnum<A, B, C, D, E, F>,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
 }
 
@@ -182,7 +182,7 @@ pub struct Manifest<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
     B: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[serde(rename = "Reference", default)]
+    #[serde(rename = "Reference", default, skip_serializing_if = "Vec::is_empty")]
     pub reference: Vec<Reference<A, B>>,
     #[serde(rename = "@Id")]
     pub id: Option<ID>,
@@ -203,7 +203,7 @@ pub struct SignatureValue {
     // #[serde(rename = "SignatureValueType")]
     #[serde(rename = "$text")]
     pub value: Base64Binary,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
 }
 
@@ -227,9 +227,9 @@ pub struct RetrievalMethod<
 > {
     #[serde(rename = "Transforms", skip_serializing_if = "Option::is_none")]
     pub transforms: Option<Transforms<A>>,
-    #[serde(rename = "@URI")]
+    #[serde(rename = "@URI", skip_serializing_if = "Option::is_none")]
     pub uri: Option<String>,
-    #[serde(rename = "@Type")]
+    #[serde(rename = "@Type", skip_serializing_if = "Option::is_none")]
     pub r#type: Option<String>,
 }
 
@@ -242,9 +242,9 @@ pub struct KeyName {
 pub struct SignatureProperties<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[serde(rename = "SignatureProperty", default)]
+    #[serde(rename = "SignatureProperty", default, skip_serializing_if = "Vec::is_empty")]
     pub signature_property: Vec<SignatureProperty<A>>,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
 }
 
@@ -261,9 +261,9 @@ pub struct SignedInfo<
     #[validate]
     #[serde(rename = "SignatureMethod")]
     pub signature_method: SignatureMethod<B>,
-    #[serde(rename = "Reference", default)]
+    #[serde(rename = "Reference", default, skip_serializing_if = "Vec::is_empty")]
     pub reference: Vec<Reference<C, D>>,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
 }
 
@@ -297,11 +297,11 @@ pub struct Reference<
     #[validate]
     #[serde(rename = "DigestValue")]
     pub digest_value: DigestValue,
-    #[serde(rename = "@URI")]
+    #[serde(rename = "@URI", skip_serializing_if = "Option::is_none")]
     pub uri: Option<String>,
-    #[serde(rename = "@Type")]
+    #[serde(rename = "@Type", skip_serializing_if = "Option::is_none")]
     pub r#type: Option<String>,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
 }
 
@@ -348,9 +348,9 @@ pub struct Signature<
     #[serde(rename = "KeyInfo", skip_serializing_if = "Option::is_none")]
     pub key_info: Option<KeyInfo<E, F, G, H, I, J>>,
     #[validate(length(min = 0,))]
-    #[serde(rename = "Object", default)]
+    #[serde(rename = "Object", skip_serializing_if = "Vec::is_empty", default)]
     pub object: Vec<Object<K>>,
-    #[serde(rename = "@Id")]
+    #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
     #[serde(rename = "@xmlns", default = "namespace")]
     pub xmlns: String,
