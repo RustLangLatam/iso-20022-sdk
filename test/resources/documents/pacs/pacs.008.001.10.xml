@@ -58,7 +58,9 @@
             <Dbtr>
                 <Nm>JOHN DOE</Nm>
                 <PstlAdr>
-                    <AdrTp>HOME</AdrTp>
+                    <AdrTp>
+                        <Cd>HOME</Cd>Cd>
+                    </AdrTp>
                     <Dept>CABA</Dept>
                     <SubDept>1</SubDept>
                     <StrtNm>2823</StrtNm>

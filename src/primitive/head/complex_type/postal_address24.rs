@@ -1,7 +1,6 @@
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 pub struct PostalAddress24 {
-    #[serde(rename = "AdrTp")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "AdrTp", skip_serializing_if = "Option::is_none")]
     pub adr_tp: Option<crate::primitive::AddressType3Choice>,
     #[serde(rename = "Dept")]
     #[serde(skip_serializing_if = "Option::is_none")]
