@@ -1,0 +1,21 @@
+<AppHdr xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.02">
+    <Fr>
+        <FIId>
+            <FinInstnId>
+                <BICFI>CHASDEFXXXX</BICFI>
+            </FinInstnId>
+        </FIId>
+    </Fr>
+    <To>
+        <FIId>
+            <FinInstnId>
+                <BICFI>CHASGB2LXXX</BICFI>
+            </FinInstnId>
+        </FIId>
+    </To>
+    <BizMsgIdr>P5607186 298</BizMsgIdr>
+    <MsgDefIdr>pacs.008.001.08</MsgDefIdr>
+    <BizSvc>swift.cbprplus.02</BizSvc>
+    <CreDt>9999-12-31T00:00:00+00:00</CreDt>
+    <Prty>NORM</Prty>
+</AppHdr>
