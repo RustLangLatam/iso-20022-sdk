@@ -23,6 +23,8 @@ pub struct AppHdr<
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 #[serde(rename = "AppHdr")]
 pub struct BusinessApplicationHeaderV02<Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+    #[serde(rename = "@xmlns", default = "namespace")]
+    pub xmlns: String,
     #[serde(rename = "CharSet", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub char_set: Option<crate::primitive::UnicodeChartsCode>,

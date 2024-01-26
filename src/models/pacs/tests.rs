@@ -48,7 +48,9 @@ mod tests {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.008.001.10.xml")
             .expect("Unable to read file");
         let doc = pacs_008_001_10::Document::<Dmkr>::from_xml(file.as_str());
-        assert!(doc.is_ok())
+
+        assert!(doc.is_ok());
+        assert_eq!(file, doc.unwrap().to_xml().unwrap())
     }
 
     #[test]

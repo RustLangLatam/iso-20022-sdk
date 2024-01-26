@@ -17,8 +17,7 @@ mod tests {
             .value
             .is_some_and(|v| v.as_pacs().is_some_and(|x| x.is_pacs_008_001_10()))));
 
-        let a = serde_json::to_string_pretty(&doc.unwrap()).unwrap();
-        println!("{}", a);
-        assert!(false)
+        let json = serde_json::to_string_pretty(&doc.unwrap());
+        assert!(json.is_ok())
     }
 }

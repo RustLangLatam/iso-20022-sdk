@@ -5,7 +5,10 @@
 //! information about the sending and receiving systems, message type, and other relevant details.
 //!
 
+use std::io::Write;
+use std::str::FromStr;
 use crate::primitive::Xmlns;
+use crate::utils::ident_xml;
 
 pub mod head_001_001_01;
 pub mod head_001_001_02;
@@ -13,8 +16,9 @@ pub mod head_001_001_02;
 mod tests;
 
 #[derive(
-Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumIter, EnumAsInner,
+    Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumIter, EnumAsInner,
 )]
+#[serde(untagged)]
 pub enum AppHdr<
     Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
@@ -26,10 +30,10 @@ pub enum AppHdr<
 }
 
 impl<
-    Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
-> AppHdr<Signature>
-    where
-        Signature: ::serde::de::DeserializeOwned,
+        Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+    > AppHdr<Signature>
+where
+    Signature: ::serde::de::DeserializeOwned,
 {
     fn from_xml(s: &str) -> Result<Self, quick_xml::DeError> {
         use crate::utils::XmlExt;
@@ -44,4 +48,17 @@ impl<
 
         Ok(doc)
     }
+
+    fn to_xml(&self) -> Result<String, quick_xml::DeError> {
+        let mut buffer = String::new();
+        quick_xml::se::to_writer(&mut buffer, self)?;
+
+        let writer = ident_xml(&buffer);
+
+        // io::stdout().write_all(&writer).unwrap();
+
+        Ok(writer)
+    }
 }
+
+
