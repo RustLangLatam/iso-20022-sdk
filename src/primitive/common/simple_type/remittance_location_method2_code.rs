@@ -7,11 +7,10 @@ pub enum RemittanceLocationMethod2Code {
     POST,
     SMSM,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl RemittanceLocationMethod2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             RemittanceLocationMethod2Code::FAXI => "FAXI",

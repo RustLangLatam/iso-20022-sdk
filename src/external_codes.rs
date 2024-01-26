@@ -45,6 +45,7 @@ pub enum ExternalChannel1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCancellationReason1Code {
     #[serde(rename = "AC03")]
@@ -106,6 +107,7 @@ pub enum ExternalCancellationReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCreditorEnrolmentStatusReason1Code {
     #[serde(rename = "ACRD")]
@@ -125,6 +127,7 @@ pub enum ExternalCreditorEnrolmentStatusReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalRelativeTo1Code {
     #[serde(rename = "GOOD")]
@@ -136,6 +139,7 @@ pub enum ExternalRelativeTo1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAgentInstruction1Code {
     #[serde(rename = "CHQB")]
@@ -161,6 +165,7 @@ pub enum ExternalAgentInstruction1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUndertakingType1Code {
     #[serde(rename = "APAY")]
@@ -194,6 +199,7 @@ pub enum ExternalUndertakingType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalBenchmarkCurveName1Code {
     #[serde(rename = "MAAA")]
@@ -285,6 +291,7 @@ pub enum ExternalBenchmarkCurveName1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalMarketInfrastructure1Code {
     #[serde(rename = "ABE")]
@@ -486,9 +493,10 @@ pub enum ExternalMarketInfrastructure1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalClearingSystemMember1Code {
-    #[validate(length(min = 1, max = 5,))]
+    #[validate(length(min = 1, max = 5, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
@@ -508,6 +516,7 @@ pub enum ExternalCreditorEnrolmentCancellationReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAgreementType1Code {
     #[serde(rename = "AUSL")]
@@ -581,6 +590,7 @@ pub enum ExternalAgreementType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalTechnicalInputChannel1Code {
     #[serde(rename = "FAXI")]
@@ -594,6 +604,7 @@ pub enum ExternalTechnicalInputChannel1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDebtorActivationAmendmentReason1Code {
     #[serde(rename = "AM05")]
@@ -609,6 +620,7 @@ pub enum ExternalDebtorActivationAmendmentReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalClearingSystemIdentification1Code {
     #[serde(rename = "ATBLZ")]
@@ -672,6 +684,7 @@ pub enum ExternalClearingSystemIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalBillingRateIdentification1Code {
     #[serde(rename = "AEAR")]
@@ -715,6 +728,7 @@ pub enum ExternalBillingRateIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalMarketArea1Code {
     #[serde(rename = "ANYY")]
@@ -758,6 +772,7 @@ pub enum ExternalMarketArea1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentRole1Code {
     #[serde(rename = "BKMG")]
@@ -775,6 +790,7 @@ pub enum ExternalPaymentRole1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPurpose1Code {
     #[serde(rename = "BKDF")]
@@ -1434,12 +1450,14 @@ pub enum ExternalPurpose1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalSecuritiesLendingType1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalMandateSuspensionReason1Code {
     #[serde(rename = "CTAM")]
@@ -1457,6 +1475,7 @@ pub enum ExternalMandateSuspensionReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDocumentType1Code {
     #[serde(rename = "CINV")]
@@ -1496,6 +1515,7 @@ pub enum ExternalDocumentType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalSystemBalanceType1Code {
     #[serde(rename = "ADJT")]
@@ -1641,12 +1661,14 @@ pub enum ExternalSystemBalanceType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalBankTransactionSubFamily1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalBillingBalanceType1Code {
     #[serde(rename = "ABRR")]
@@ -1698,12 +1720,14 @@ pub enum ExternalBillingBalanceType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalChequeCancellationStatus1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAuthenticationChannel1Code {
     #[serde(rename = "ATMA")]
@@ -1717,6 +1741,7 @@ pub enum ExternalAuthenticationChannel1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalReservationType1Code {
     #[serde(rename = "BLKD")]
@@ -1734,6 +1759,7 @@ pub enum ExternalReservationType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalVerificationReason1Code {
     #[serde(rename = "AC01")]
@@ -1745,6 +1771,7 @@ pub enum ExternalVerificationReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCategoryPurpose1Code {
     #[serde(rename = "BONU")]
@@ -1838,6 +1865,7 @@ pub enum ExternalCategoryPurpose1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalClaimNonReceiptRejection1Code {
     #[serde(rename = "NOOR")]
@@ -1853,6 +1881,7 @@ pub enum ExternalClaimNonReceiptRejection1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentTransactionStatus1Code {
     #[serde(rename = "ACCC")]
@@ -1894,6 +1923,7 @@ pub enum ExternalPaymentTransactionStatus1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPackagingType1Code {
     #[serde(rename = "HDPE")]
@@ -1907,12 +1937,14 @@ pub enum ExternalPackagingType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalSystemPartyType1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalTaxAmountType1Code {
     #[serde(rename = "CITY")]
@@ -1928,6 +1960,7 @@ pub enum ExternalTaxAmountType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalTradeTransactionCondition1Code {
     #[serde(rename = "BCBL")]
@@ -2027,18 +2060,21 @@ pub enum ExternalTradeTransactionCondition1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalCreditLineType1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalFinancialInstrumentProductType1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalReversalReason1Code {
     #[serde(rename = "AC03")]
@@ -2066,6 +2102,7 @@ pub enum ExternalReversalReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDebtorActivationStatusReason1Code {
     #[serde(rename = "ACRD")]
@@ -2085,6 +2122,7 @@ pub enum ExternalDebtorActivationStatusReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUnableToApplyMissingData1Code {
     #[serde(rename = "MS01")]
@@ -2128,6 +2166,7 @@ pub enum ExternalUnableToApplyMissingData1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAuthorityExchangeReason1Code {
     #[serde(rename = "ADHR")]
@@ -2159,6 +2198,7 @@ pub enum ExternalAuthorityExchangeReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalContractClosureReason1Code {
     #[serde(rename = "PCED")]
@@ -2182,6 +2222,7 @@ pub enum ExternalContractClosureReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalOrganisationIdentification1Code {
     #[serde(rename = "BANK")]
@@ -2215,6 +2256,7 @@ pub enum ExternalOrganisationIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalBillingCompensationType1Code {
     #[serde(rename = "BACS")]
@@ -2264,18 +2306,21 @@ pub enum ExternalBillingCompensationType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalChequeAgentInstruction1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalFinancialInstitutionIdentification1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAccountIdentification1Code {
     #[serde(rename = "AIIN")]
@@ -2289,6 +2334,7 @@ pub enum ExternalAccountIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalSystemMemberType1Code {
     #[serde(rename = "DRCT")]
@@ -2304,6 +2350,7 @@ pub enum ExternalSystemMemberType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalChargeType1Code {
     #[serde(rename = "BRKF")]
@@ -2317,6 +2364,7 @@ pub enum ExternalChargeType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUndertakingChargeType1Code {
     #[serde(rename = "AMND")]
@@ -2342,6 +2390,7 @@ pub enum ExternalUndertakingChargeType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPersonIdentification1Code {
     #[serde(rename = "ARNU")]
@@ -2367,6 +2416,7 @@ pub enum ExternalPersonIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCashClearingSystem1Code {
     #[serde(rename = "ABE")]
@@ -2614,6 +2664,7 @@ pub enum ExternalCashClearingSystem1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCreditorEnrolmentAmendmentReason1Code {
     #[serde(rename = "AM05")]
@@ -2629,6 +2680,7 @@ pub enum ExternalCreditorEnrolmentAmendmentReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalReturnReason1Code {
     #[serde(rename = "AC01")]
@@ -2842,6 +2894,7 @@ pub enum ExternalReturnReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalStatusReason1Code {
     #[serde(rename = "AB01")]
@@ -3387,6 +3440,7 @@ pub enum ExternalStatusReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalIncoterms1Code {
     #[serde(rename = "CFR")]
@@ -3414,6 +3468,7 @@ pub enum ExternalIncoterms1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalReportingSource1Code {
     #[serde(rename = "ACCT")]
@@ -3441,6 +3496,7 @@ pub enum ExternalReportingSource1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalEffectiveDateParameter1Code {
     #[serde(rename = "SETT")]
@@ -3450,12 +3506,14 @@ pub enum ExternalEffectiveDateParameter1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalNotificationCancellationReason1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalSystemErrorHandling1Code {
     #[serde(rename = "X020")]
@@ -3467,12 +3525,14 @@ pub enum ExternalSystemErrorHandling1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalMandateSetupReason1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentControlRequestType1Code {
     #[serde(rename = "RT01")]
@@ -3488,12 +3548,14 @@ pub enum ExternalPaymentControlRequestType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalChequeCancellationReason1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalInformationType1Code {
     #[serde(rename = "INST")]
@@ -3511,6 +3573,7 @@ pub enum ExternalInformationType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalRatesAndTenors1Code {
     #[serde(rename = "EURI")]
@@ -3532,12 +3595,14 @@ pub enum ExternalRatesAndTenors1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalInstructedAgentInstruction1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPendingProcessingReason1Code {
     #[serde(rename = "ADEA")]
@@ -3563,6 +3628,7 @@ pub enum ExternalPendingProcessingReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalEntryStatus1Code {
     #[serde(rename = "BOOK")]
@@ -3576,6 +3642,7 @@ pub enum ExternalEntryStatus1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalServiceLevel1Code {
     #[serde(rename = "BKTR")]
@@ -3625,6 +3692,7 @@ pub enum ExternalServiceLevel1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUndertakingDocumentType2Code {
     #[serde(rename = "BENS")]
@@ -3636,6 +3704,7 @@ pub enum ExternalUndertakingDocumentType2Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalContractBalanceType1Code {
     #[serde(rename = "EXPC")]
@@ -3645,6 +3714,7 @@ pub enum ExternalContractBalanceType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAcceptedReason1Code {
     #[serde(rename = "ADEA")]
@@ -3656,6 +3726,7 @@ pub enum ExternalAcceptedReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUnitOfMeasure1Code {
     #[serde(rename = "KILO")]
@@ -3849,6 +3920,7 @@ pub enum ExternalUnitOfMeasure1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentCancellationRejection1Code {
     #[serde(rename = "AC04")]
@@ -3904,18 +3976,21 @@ pub enum ExternalPaymentCancellationRejection1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalCardTransactionCategory1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalBankTransactionDomain1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalBalanceType1Code {
     #[serde(rename = "CLAV")]
@@ -3941,6 +4016,7 @@ pub enum ExternalBalanceType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalEnquiryRequestType1Code {
     #[serde(rename = "RT11")]
@@ -3958,6 +4034,7 @@ pub enum ExternalEnquiryRequestType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalGarnishmentType1Code {
     #[serde(rename = "GNCS")]
@@ -3969,6 +4046,7 @@ pub enum ExternalGarnishmentType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalLocalInstrument1Code {
     #[serde(rename = "DDMC")]
@@ -4188,18 +4266,21 @@ pub enum ExternalLocalInstrument1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalPartyRelationshipType1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalCommunicationFormat1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDocumentLineType1Code {
     #[serde(rename = "ADPI")]
@@ -4243,6 +4324,7 @@ pub enum ExternalDocumentLineType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalTradeMarket1Code {
     #[serde(rename = "FDMS")]
@@ -4260,6 +4342,7 @@ pub enum ExternalTradeMarket1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUndertakingAmountType1Code {
     #[serde(rename = "INCR")]
@@ -4269,6 +4352,7 @@ pub enum ExternalUndertakingAmountType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDebtorActivationCancellationReason1Code {
     #[serde(rename = "AM05")]
@@ -4284,6 +4368,7 @@ pub enum ExternalDebtorActivationCancellationReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUnableToApplyIncorrectData1Code {
     #[serde(rename = "IN01")]
@@ -4371,6 +4456,7 @@ pub enum ExternalUnableToApplyIncorrectData1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalRejectedReason1Code {
     #[serde(rename = "ADEA")]
@@ -4426,6 +4512,7 @@ pub enum ExternalRejectedReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDocumentPurpose1Code {
     #[serde(rename = "CONF")]
@@ -4435,18 +4522,21 @@ pub enum ExternalDocumentPurpose1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalDiscrepancy1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalBankTransactionFamily1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalLetterType1Code {
     #[serde(rename = "LFBK")]
@@ -4458,6 +4548,7 @@ pub enum ExternalLetterType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalNarrativeType1Code {
     #[serde(rename = "ADDI")]
@@ -4477,6 +4568,7 @@ pub enum ExternalNarrativeType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalSystemEventType1Code {
     #[serde(rename = "CRCO")]
@@ -4526,6 +4618,7 @@ pub enum ExternalSystemEventType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUndertakingStatusCategory1Code {
     #[serde(rename = "AMND")]
@@ -4549,6 +4642,7 @@ pub enum ExternalUndertakingStatusCategory1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalFinancialInstrumentIdentificationType1Code {
     #[serde(rename = "BELC")]
@@ -4602,6 +4696,7 @@ pub enum ExternalFinancialInstrumentIdentificationType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalSecuritiesPurpose1Code {
     #[serde(rename = "COLL")]
@@ -4613,6 +4708,7 @@ pub enum ExternalSecuritiesPurpose1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentModificationRejection1Code {
     #[serde(rename = "UM01")]
@@ -4674,12 +4770,14 @@ pub enum ExternalPaymentModificationRejection1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalDebtorAgentInstruction1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUndertakingDocumentType1Code {
     #[serde(rename = "BENS")]
@@ -4695,6 +4793,7 @@ pub enum ExternalUndertakingDocumentType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalBalanceSubType1Code {
     #[serde(rename = "ADJT")]
@@ -4742,6 +4841,7 @@ pub enum ExternalBalanceSubType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalAuthorityIdentification1Code {
     #[serde(rename = "AUAS")]
@@ -4841,6 +4941,7 @@ pub enum ExternalAuthorityIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalMandateReason1Code {
     #[serde(rename = "AC01")]
@@ -4942,12 +5043,14 @@ pub enum ExternalMandateReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalSecuritiesUpdateReason1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalValidationRuleIdentification1Code {
     #[serde(rename = "CCTR")]
@@ -4961,6 +5064,7 @@ pub enum ExternalValidationRuleIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalShipmentCondition1Code {
     #[serde(rename = "ADVN")]
@@ -4972,6 +5076,7 @@ pub enum ExternalShipmentCondition1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDateFrequency1Code {
     #[serde(rename = "MNTH")]
@@ -4987,6 +5092,7 @@ pub enum ExternalDateFrequency1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCreditorAgentInstruction1Code {
     #[serde(rename = "CHQB")]
@@ -5018,12 +5124,14 @@ pub enum ExternalCreditorAgentInstruction1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Builder, Validate)]
 pub struct ExternalAuthenticationMethod1Code {
-    #[validate(length(min = 1, max = 4,))]
+    #[validate(length(min = 1, max = 4, ))]
     #[serde(rename = "$value")]
     pub value: String,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalUnderlyingTradeTransactionType1Code {
     #[serde(rename = "CONT")]
@@ -5043,6 +5151,7 @@ pub enum ExternalUnderlyingTradeTransactionType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalRePresentmentReason1Code {
     #[serde(rename = "AMCR")]
@@ -5058,6 +5167,7 @@ pub enum ExternalRePresentmentReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalInvestigationExecutionConfirmation1Code {
     #[serde(rename = "ACDA")]
@@ -5125,6 +5235,7 @@ pub enum ExternalInvestigationExecutionConfirmation1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentGroupStatus1Code {
     #[serde(rename = "ACCP")]
@@ -5150,6 +5261,7 @@ pub enum ExternalPaymentGroupStatus1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDiscountAmountType1Code {
     #[serde(rename = "APDS")]
@@ -5161,6 +5273,7 @@ pub enum ExternalDiscountAmountType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalModelFormIdentification1Code {
     #[serde(rename = "ISP1")]
@@ -5186,6 +5299,7 @@ pub enum ExternalModelFormIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalReceivedReason1Code {
     #[serde(rename = "NSTP")]
@@ -5193,6 +5307,7 @@ pub enum ExternalReceivedReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalEncryptedElementIdentification1Code {
     #[serde(rename = "8A")]
@@ -5322,6 +5437,7 @@ pub enum ExternalEncryptedElementIdentification1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalCashAccountType1Code {
     #[serde(rename = "CACC")]
@@ -5373,6 +5489,7 @@ pub enum ExternalCashAccountType1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalPaymentCompensationReason1Code {
     #[serde(rename = "VADA")]
@@ -5380,6 +5497,7 @@ pub enum ExternalPaymentCompensationReason1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalTypeOfParty1Code {
     #[serde(rename = "ADVP")]
@@ -5411,6 +5529,7 @@ pub enum ExternalTypeOfParty1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalDocumentFormat1Code {
     #[serde(rename = "DPDF")]
@@ -5426,6 +5545,7 @@ pub enum ExternalDocumentFormat1Code {
     #[default]
     Unknown,
 }
+
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum ExternalProxyAccountType1Code {
     #[serde(rename = "TELE")]
@@ -5504,7 +5624,6 @@ pub enum AddressType2Code {
 }
 
 impl AddressType2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             AddressType2Code::ADDR => "ADDR",

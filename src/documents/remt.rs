@@ -14,10 +14,10 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-use super::Dmkr;
-
 // Re-export the iso 20022 remt module
 pub use iso_20022_remt::*;
+
+use super::Dmkr;
 
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum Document {
@@ -50,8 +50,8 @@ pub mod tests {
     use chrono::Utc;
 
     use crate::documents::{
-        remt::{self, remt_001_001_05},
         Dmkr,
+        remt::remt_001_001_05,
     };
 
     pub fn party_identification_135() -> Result<

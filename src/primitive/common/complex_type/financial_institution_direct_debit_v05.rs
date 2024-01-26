@@ -8,8 +8,7 @@ pub struct FinancialInstitutionDirectDebitV05<A: std::fmt::Debug + Default + Clo
     #[serde(rename = "CdtInstr")]
     #[validate(length(min = 1,))]
     pub cdt_instr: Vec<super::CreditTransferTransaction53<A>>,
-    #[serde(rename = "SplmtryData")]
-    #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

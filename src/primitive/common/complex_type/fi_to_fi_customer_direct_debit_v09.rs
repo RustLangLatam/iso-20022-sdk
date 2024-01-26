@@ -8,8 +8,7 @@ pub struct FIToFICustomerDirectDebitV09<A: std::fmt::Debug + Default + Clone + P
     #[serde(rename = "DrctDbtTxInf")]
     #[validate(length(min = 1,))]
     pub drct_dbt_tx_inf: Vec<super::DirectDebitTransactionInformation29<A>>,
-    #[serde(rename = "SplmtryData")]
-    #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

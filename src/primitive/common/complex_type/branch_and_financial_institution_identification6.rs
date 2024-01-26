@@ -5,7 +5,7 @@ pub struct BranchAndFinancialInstitutionIdentification6 {
     #[serde(rename = "FinInstnId")]
     #[validate]
     pub fin_instn_id: super::FinancialInstitutionIdentification18,
-    #[serde(rename = "BrnchId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "BrnchId", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub brnch_id: Option<super::BranchData3>,
 }

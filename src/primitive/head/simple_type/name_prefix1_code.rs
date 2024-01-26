@@ -5,11 +5,10 @@ pub enum NamePrefix1Code {
     MISS,
     MADM,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl NamePrefix1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             NamePrefix1Code::DOCT => "DOCT",

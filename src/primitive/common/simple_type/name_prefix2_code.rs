@@ -6,11 +6,10 @@ pub enum NamePrefix2Code {
     MIST,
     MIKS,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl NamePrefix2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             NamePrefix2Code::DOCT => "DOCT",

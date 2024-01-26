@@ -6,11 +6,10 @@ pub enum PreferredContactMethod1Code {
     FAXX,
     CELL,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl PreferredContactMethod1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             PreferredContactMethod1Code::LETT => "LETT",

@@ -16,7 +16,7 @@ use crate::types::{BranchAndFinancialInstitutionIdentification6, FinancialInstit
 
 /// Default Envelope Type
 pub type DefaultMsgEnvlp =
-    nvlp::BizMsgEnvlp<head::AppHdr<Signature, Signature>, Document, Dmkr, Dmkr>;
+nvlp::BizMsgEnvlp<head::AppHdr<Signature, Signature>, Document, Dmkr, Dmkr>;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
@@ -38,12 +38,12 @@ pub enum Error {
 pub struct Message<
     'a,
     Doc: std::fmt::Debug
-        + Default
-        + Clone
-        + PartialEq
-        + ::serde::Serialize
-        + ::serde::Deserialize<'a>
-        + ::validator::Validate,
+    + Default
+    + Clone
+    + PartialEq
+    + ::serde::Serialize
+    + ::serde::Deserialize<'a>
+    + ::validator::Validate,
 > {
     /// XML string representing the inner type. Used internally to parse the inner type.
     /// An incoming message will use this field for helping to determine what the
@@ -57,8 +57,8 @@ pub struct Message<
 }
 
 impl<'a, Doc> Message<'a, Doc>
-where
-    Doc: std::fmt::Debug
+    where
+        Doc: std::fmt::Debug
         + Default
         + Clone
         + PartialEq
@@ -366,14 +366,14 @@ where
                     println!("ProcessingInstruction::data: {:?}", data);
                 }
                 Ok(XmlEvent::StartElement {
-                    name:
-                        xml::name::OwnedName {
-                            local_name,
-                            namespace,
-                            ..
-                        },
-                    ..
-                }) => {
+                       name:
+                       xml::name::OwnedName {
+                           local_name,
+                           namespace,
+                           ..
+                       },
+                       ..
+                   }) => {
                     println!("StartElement::local_name: {}", local_name);
                     println!("StartElement::namespace: {:?}", namespace);
                 }

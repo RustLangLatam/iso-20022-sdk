@@ -13,7 +13,7 @@ pub mod head_001_001_02;
 mod tests;
 
 #[derive(
-    Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumIter, EnumAsInner,
+Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumIter, EnumAsInner,
 )]
 pub enum AppHdr<
     Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
@@ -26,10 +26,10 @@ pub enum AppHdr<
 }
 
 impl<
-        Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
-    > AppHdr<Signature>
-where
-    Signature: ::serde::de::DeserializeOwned,
+    Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> AppHdr<Signature>
+    where
+        Signature: ::serde::de::DeserializeOwned,
 {
     fn from_xml(s: &str) -> Result<Self, quick_xml::DeError> {
         use crate::utils::XmlExt;

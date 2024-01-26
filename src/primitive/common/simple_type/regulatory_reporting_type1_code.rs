@@ -4,11 +4,10 @@ pub enum RegulatoryReportingType1Code {
     DEBT,
     BOTH,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl RegulatoryReportingType1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             RegulatoryReportingType1Code::CRED => "CRED",

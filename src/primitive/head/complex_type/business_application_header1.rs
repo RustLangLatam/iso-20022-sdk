@@ -1,4 +1,5 @@
 use ::validator::Validate;
+
 use crate::primitive::Max35Text;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]

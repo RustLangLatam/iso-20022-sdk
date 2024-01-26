@@ -4,11 +4,10 @@ pub enum CopyDuplicate1Code {
     COPY,
     DUPL,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl CopyDuplicate1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             CopyDuplicate1Code::CODU => "CODU",

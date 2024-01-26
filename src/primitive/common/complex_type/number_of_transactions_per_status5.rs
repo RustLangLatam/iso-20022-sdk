@@ -8,7 +8,7 @@ pub struct NumberOfTransactionsPerStatus5 {
     #[serde(rename = "DtldSts")]
     #[validate]
     pub dtld_sts: super::super::simple_type::ExternalPaymentTransactionStatus1Code,
-    #[serde(rename = "DtldCtrlSum")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "DtldCtrlSum", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub dtld_ctrl_sum: Option<super::super::simple_type::DecimalNumber>,
 }

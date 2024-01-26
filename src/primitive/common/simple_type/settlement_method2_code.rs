@@ -4,11 +4,10 @@ pub enum SettlementMethod2Code {
     INGA,
     CLRG,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl SettlementMethod2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             SettlementMethod2Code::INDA => "INDA",

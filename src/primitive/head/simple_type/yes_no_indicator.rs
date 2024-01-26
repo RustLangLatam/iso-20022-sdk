@@ -1,15 +1,15 @@
-
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Validate)]
 #[serde(transparent)]
 pub struct YesNoIndicator {
     #[serde(rename = "$text")]
-    pub value: bool
+    pub value: bool,
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::utils::XmlExt;
+
+    use super::*;
 
     #[test]
     fn test_parse_xml_document() {

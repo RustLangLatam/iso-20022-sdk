@@ -3,11 +3,10 @@ pub enum Instruction4Code {
     PHOA,
     TELA,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl Instruction4Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             Instruction4Code::PHOA => "PHOA",

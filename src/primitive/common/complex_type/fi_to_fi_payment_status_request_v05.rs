@@ -5,16 +5,13 @@ pub struct FIToFIPaymentStatusRequestV05<A: std::fmt::Debug + Default + Clone + 
     #[serde(rename = "GrpHdr")]
     #[validate]
     pub grp_hdr: super::GroupHeader91,
-    #[serde(rename = "OrgnlGrpInf")]
-    #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, rename = "OrgnlGrpInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[validate]
     pub orgnl_grp_inf: Vec<super::OriginalGroupInformation27>,
-    #[serde(rename = "TxInf")]
-    #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, rename = "TxInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[validate]
     pub tx_inf: Vec<super::PaymentTransaction131<A>>,
-    #[serde(rename = "SplmtryData")]
-    #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

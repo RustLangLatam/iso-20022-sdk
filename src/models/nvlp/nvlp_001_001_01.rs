@@ -50,7 +50,7 @@ pub struct Reference22<
     pub issr: PartyIdentification135,
     #[serde(rename = "Val")]
     pub val: ReferenceValue1Choice,
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(rename = "SplmtryData", default)]
     pub splmtry_data: Vec<SupplementaryData1<A>>,
 }
@@ -98,10 +98,10 @@ pub struct BusinessMessageEnvelopeV01<
     #[validate]
     #[serde(rename = "Document")]
     pub doc: LaxPayload<B>,
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(rename = "Ref", default)]
     pub r#ref: Vec<Reference22<C>>,
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(rename = "SplmtryData", default)]
     pub splmtry_data: Vec<SupplementaryData1<D>>,
     #[serde(rename = "@xmlns", default = "namespace")]

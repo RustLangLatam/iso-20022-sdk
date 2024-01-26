@@ -22,17 +22,3 @@ pub struct Document<
     #[serde(rename = "@xmlns", default = "namespace")]
     pub xmlns: String,
 }
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-    use crate::primitive::Dmkr;
-    use crate::utils::XmlExt;
-
-    #[test]
-    fn test_parse_xml_document() {
-        let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.028.001.05.xml").expect("Unable to read file");
-        let doc = Document::<Dmkr>::from_xml(file.as_str());
-        assert!(doc.is_ok())
-    }
-}

@@ -4,7 +4,7 @@ pub struct OrganisationIdentification7 {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub any_bic: Option<super::super::simple_type::AnyBICIdentifier>,
     #[serde(rename = "Othr")]
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(default)]
     pub othr: Vec<super::GenericOrganisationIdentification1>,
 }

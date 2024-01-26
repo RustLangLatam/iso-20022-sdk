@@ -10,11 +10,10 @@ pub enum Frequency6Code {
     INDA,
     FRTN,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl Frequency6Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             Frequency6Code::YEAR => "YEAR",

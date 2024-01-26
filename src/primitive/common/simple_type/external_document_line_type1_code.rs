@@ -1,4 +1,3 @@
-
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Validate)]
 #[serde(transparent)]
 pub struct ExternalDocumentLineType1Code {

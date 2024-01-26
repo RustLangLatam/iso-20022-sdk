@@ -46,8 +46,8 @@ pub struct MessageSigner<
 }
 
 impl<A> MessageSigner<A>
-where
-    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+    where
+        A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 {
     /// Create a new message signer
     pub fn new() -> Self {
@@ -59,8 +59,8 @@ where
 
 // Implement Deref for MessageSigner
 impl<A> std::ops::Deref for MessageSigner<A>
-where
-    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+    where
+        A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 {
     type Target = A;
 

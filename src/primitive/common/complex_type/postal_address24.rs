@@ -1,4 +1,4 @@
-use crate::validator::Validate;
+use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 pub struct PostalAddress24 {

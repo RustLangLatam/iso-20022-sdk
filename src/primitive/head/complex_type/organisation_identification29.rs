@@ -7,7 +7,7 @@ pub struct OrganisationIdentification29 {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub lei: Option<super::super::simple_type::LEIIdentifier>,
     #[serde(rename = "Othr")]
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(default)]
     pub othr: Vec<super::GenericOrganisationIdentification1>,
 }

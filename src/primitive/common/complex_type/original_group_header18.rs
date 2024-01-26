@@ -8,11 +8,10 @@ pub struct OriginalGroupHeader18 {
     #[serde(rename = "OrgnlMsgNmId")]
     #[validate]
     pub orgnl_msg_nm_id: super::super::simple_type::Max35Text,
-    #[serde(rename = "OrgnlCreDtTm")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "OrgnlCreDtTm", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub orgnl_cre_dt_tm: Option<super::super::simple_type::ISODateTime>,
-    #[serde(rename = "RtrRsnInf")]
-    #[validate(length(min = 0,))]
-    #[serde(default)]
+    #[serde(default, rename = "RtrRsnInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[validate]
     pub rtr_rsn_inf: Vec<super::PaymentReturnReason6>,
 }

@@ -19,11 +19,10 @@ pub enum TaxRecordPeriod1Code {
     HLF1,
     HLF2,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl TaxRecordPeriod1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             TaxRecordPeriod1Code::MM01 => "MM01",

@@ -62,7 +62,7 @@ pub struct BusinessApplicationHeaderV02<Signature: std::fmt::Debug + Default + C
     #[validate]
     pub sgntr: Option<crate::primitive::SignatureEnvelope<Signature>>,
     #[serde(rename = "Rltd")]
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(default)]
     pub rltd: Vec<crate::primitive::BusinessApplicationHeader5<Signature>>,
 }

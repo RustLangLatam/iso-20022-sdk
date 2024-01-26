@@ -5,11 +5,10 @@ pub enum PaymentMethod4Code {
     DD,
     TRA,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl PaymentMethod4Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             PaymentMethod4Code::CHK => "CHK",

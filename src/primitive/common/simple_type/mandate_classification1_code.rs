@@ -4,11 +4,10 @@ pub enum MandateClassification1Code {
     USGB,
     VARI,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl MandateClassification1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             MandateClassification1Code::FIXE => "FIXE",

@@ -4,10 +4,10 @@ use ::validator::Validate;
 pub struct SettlementInstruction14 {
     #[serde(rename = "SttlmMtd")]
     pub sttlm_mtd: super::super::simple_type::SettlementMethod2Code,
-    #[serde(rename = "SttlmAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "SttlmAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub sttlm_acct: Option<super::CashAccount40>,
-    #[serde(rename = "ClrSys")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "ClrSys", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub clr_sys: Option<super::ClearingSystemIdentification3Choice>,
 }

@@ -3,11 +3,10 @@ pub enum CreditDebitCode {
     CRDT,
     DBIT,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl CreditDebitCode {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             CreditDebitCode::CRDT => "CRDT",

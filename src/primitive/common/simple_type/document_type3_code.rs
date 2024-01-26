@@ -7,11 +7,10 @@ pub enum DocumentType3Code {
     PUOR,
     SCOR,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl DocumentType3Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             DocumentType3Code::RADM => "RADM",

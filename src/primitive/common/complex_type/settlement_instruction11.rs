@@ -4,28 +4,28 @@ use ::validator::Validate;
 pub struct SettlementInstruction11 {
     #[serde(rename = "SttlmMtd")]
     pub sttlm_mtd: super::super::simple_type::SettlementMethod1Code,
-    #[serde(rename = "SttlmAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "SttlmAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub sttlm_acct: Option<super::CashAccount40>,
-    #[serde(rename = "ClrSys")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "ClrSys", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub clr_sys: Option<super::ClearingSystemIdentification3Choice>,
-    #[serde(rename = "InstgRmbrsmntAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "InstgRmbrsmntAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub instg_rmbrsmnt_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "InstgRmbrsmntAgtAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "InstgRmbrsmntAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub instg_rmbrsmnt_agt_acct: Option<super::CashAccount40>,
-    #[serde(rename = "InstdRmbrsmntAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "InstdRmbrsmntAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub instd_rmbrsmnt_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "InstdRmbrsmntAgtAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "InstdRmbrsmntAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub instd_rmbrsmnt_agt_acct: Option<super::CashAccount40>,
-    #[serde(rename = "ThrdRmbrsmntAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "ThrdRmbrsmntAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub thrd_rmbrsmnt_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "ThrdRmbrsmntAgtAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "ThrdRmbrsmntAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub thrd_rmbrsmnt_agt_acct: Option<super::CashAccount40>,
 }

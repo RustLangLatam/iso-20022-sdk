@@ -5,11 +5,10 @@ pub enum ClearingChannel2Code {
     MPNS,
     BOOK,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl ClearingChannel2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             ClearingChannel2Code::RTGS => "RTGS",

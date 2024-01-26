@@ -14,10 +14,12 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-use super::{Dmkr, DEFAULT_XLMNS_PREFIX};
-use crate::models;
 use quick_xml::DeError;
+
+use crate::models;
 use crate::primitive::Xmlns;
+
+use super::{DEFAULT_XLMNS_PREFIX, Dmkr};
 
 // Re-export the iso 20022 pacs module
 

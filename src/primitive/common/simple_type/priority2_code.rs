@@ -3,11 +3,10 @@ pub enum Priority2Code {
     HIGH,
     NORM,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl Priority2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             Priority2Code::HIGH => "HIGH",

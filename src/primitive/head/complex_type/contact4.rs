@@ -31,7 +31,7 @@ pub struct Contact4 {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub dept: Option<crate::primitive::Max70Text>,
     #[serde(rename = "Othr")]
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(default)]
     pub othr: Vec<super::OtherContact1>,
     #[serde(rename = "PrefrdMtd")]

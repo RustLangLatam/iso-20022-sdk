@@ -5,11 +5,10 @@ pub enum Authorisation1Code {
     FSUM,
     ILEV,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl Authorisation1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             Authorisation1Code::AUTH => "AUTH",

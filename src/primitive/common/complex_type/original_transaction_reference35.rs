@@ -1,69 +1,70 @@
+use ::validator::Validate;
+
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 pub struct OriginalTransactionReference35 {
-    #[serde(rename = "IntrBkSttlmAmt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "IntrBkSttlmAmt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub intr_bk_sttlm_amt: Option<super::ActiveOrHistoricCurrencyAndAmount>,
-    #[serde(rename = "Amt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "Amt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub amt: Option<super::AmountType4Choice>,
-    #[serde(rename = "IntrBkSttlmDt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "IntrBkSttlmDt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub intr_bk_sttlm_dt: Option<super::super::simple_type::ISODate>,
-    #[serde(rename = "ReqdColltnDt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "ReqdColltnDt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub reqd_colltn_dt: Option<super::super::simple_type::ISODate>,
-    #[serde(rename = "ReqdExctnDt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "ReqdExctnDt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub reqd_exctn_dt: Option<super::DateAndDateTime2Choice>,
-    #[serde(rename = "CdtrSchmeId")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "CdtrSchmeId", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub cdtr_schme_id: Option<super::PartyIdentification135>,
-    #[serde(rename = "SttlmInf")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "SttlmInf", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub sttlm_inf: Option<super::SettlementInstruction11>,
-    #[serde(rename = "PmtTpInf")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "PmtTpInf", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub pmt_tp_inf: Option<super::PaymentTypeInformation27>,
-    #[serde(rename = "PmtMtd")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "PmtMtd", skip_serializing_if = "Option::is_none")]
     pub pmt_mtd: Option<super::super::simple_type::PaymentMethod4Code>,
-    #[serde(rename = "MndtRltdInf")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "MndtRltdInf", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub mndt_rltd_inf: Option<super::MandateRelatedData2Choice>,
-    #[serde(rename = "RmtInf")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "RmtInf", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub rmt_inf: Option<super::RemittanceInformation21>,
-    #[serde(rename = "UltmtDbtr")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "UltmtDbtr", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub ultmt_dbtr: Option<super::Party40Choice>,
-    #[serde(rename = "Dbtr")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "Dbtr", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub dbtr: Option<super::Party40Choice>,
-    #[serde(rename = "DbtrAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "DbtrAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub dbtr_acct: Option<super::CashAccount40>,
-    #[serde(rename = "DbtrAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "DbtrAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub dbtr_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "DbtrAgtAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "DbtrAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub dbtr_agt_acct: Option<super::CashAccount40>,
-    #[serde(rename = "CdtrAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "CdtrAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub cdtr_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "CdtrAgtAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "CdtrAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub cdtr_agt_acct: Option<super::CashAccount40>,
-    #[serde(rename = "Cdtr")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "Cdtr", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub cdtr: Option<super::Party40Choice>,
-    #[serde(rename = "CdtrAcct")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "CdtrAcct", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub cdtr_acct: Option<super::CashAccount40>,
-    #[serde(rename = "UltmtCdtr")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "UltmtCdtr", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub ultmt_cdtr: Option<super::Party40Choice>,
-    #[serde(rename = "Purp")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "Purp", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub purp: Option<super::Purpose2Choice>,
 }

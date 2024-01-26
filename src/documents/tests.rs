@@ -1,7 +1,7 @@
 mod tests {
     use crate::documents::Document;
 
-    // #[test]
+// #[test]
     // fn test_from_namespace() {
     //     let doc = Document::from_namespace("pacs.008.001.10");
     //     assert!(false)

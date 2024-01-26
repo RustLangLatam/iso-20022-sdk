@@ -5,8 +5,8 @@ pub struct DateAndPlaceOfBirth1 {
     #[serde(rename = "BirthDt")]
     #[validate]
     pub birth_dt: super::super::simple_type::ISODate,
-    #[serde(rename = "PrvcOfBirth")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "PrvcOfBirth", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub prvc_of_birth: Option<super::super::simple_type::Max35Text>,
     #[serde(rename = "CityOfBirth")]
     #[validate]

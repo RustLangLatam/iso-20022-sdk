@@ -11,8 +11,10 @@ pub struct ISONormalisedDateTime {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::validator::Validate;
+
+    use super::*;
+
     #[test]
     fn test_parse_xml_document() {
         let doc = ISONormalisedDateTime {

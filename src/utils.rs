@@ -1,7 +1,7 @@
 /// A trait for XML serialization and deserialization with validation.
 pub trait XmlExt
-where
-    Self: Sized + ::serde::Serialize + ::serde::de::DeserializeOwned + ::validator::Validate,
+    where
+        Self: Sized + ::serde::Serialize + ::serde::de::DeserializeOwned + ::validator::Validate,
 {
     /// Serializes the structure to XML.
     ///
@@ -40,5 +40,4 @@ where
 
 impl<T: ?Sized> XmlExt for T where
     T: ::serde::Serialize + serde::de::DeserializeOwned + ::validator::Validate
-{
-}
+{}

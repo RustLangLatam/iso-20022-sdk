@@ -16,3 +16,6 @@ pub mod pacs_007_001_11;
 pub mod pacs_010_001_05;
 pub mod pacs_008_001_10;
 pub mod pacs_028_001_05;
+
+#[cfg(test)]
+mod tests;

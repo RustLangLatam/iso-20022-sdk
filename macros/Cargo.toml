@@ -1,0 +1,29 @@
+[package]
+name = "iso-20022-macros"
+version = "0.1.10-dev.2"
+authors = ["ProxymaX Development Team", "Eleazar Garrido <rust.lang.latam@gmail.com>"]
+repository = "https://gitlab.com/proximax-latam/ncore"
+homepage = "https://www.proximax.io"
+keywords = ["swift", "iso-20022"]
+categories = ["finance", "iso-20022"]
+license = "Apache-2.0"
+edition = "2021"
+rust-version = "1.74.1"
+publish = false
+
+[lib]
+proc-macro = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+proc-macro2 = "1"
+quote = "1"
+syn = "2.0.48"
+proc-macro-error = "1.0.4"
+venial = "0.5.0"
+
+[dev-dependencies]
+serde = { version = "1", features = ["derive"] }
+
+iso-20022-macros = { path = "." }

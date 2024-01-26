@@ -107,14 +107,14 @@ pub struct CharTwoFieldElemType {
 
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Validate)]
 pub struct NonNegativeInteger {
-    #[validate(range(min = 0,))]
+    #[validate(range(min = 0, ))]
     #[serde(rename = "$text")]
     pub value: u64,
 }
 
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Validate)]
 pub struct PositiveInteger {
-    #[validate(range(min = 1,))]
+    #[validate(range(min = 1, ))]
     #[serde(rename = "$text")]
     pub value: u64,
 }

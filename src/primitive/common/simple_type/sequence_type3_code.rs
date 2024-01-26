@@ -6,11 +6,10 @@ pub enum SequenceType3Code {
     OOFF,
     RPRE,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl SequenceType3Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             SequenceType3Code::FRST => "FRST",

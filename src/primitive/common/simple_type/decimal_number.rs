@@ -1,4 +1,3 @@
-
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Validate)]
 pub struct DecimalNumber {
     #[serde(rename = "$text")]

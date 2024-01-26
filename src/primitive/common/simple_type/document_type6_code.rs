@@ -17,11 +17,10 @@ pub enum DocumentType6Code {
     TSUT,
     PUOR,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl DocumentType6Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             DocumentType6Code::MSIN => "MSIN",

@@ -1,7 +1,6 @@
-
 <AppHdr
-        xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.01"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="urn:iso:std:iso:20022:tech:xsd:head.001.001.01">
     <Fr>
         <FIId>
             <FinInstnId>

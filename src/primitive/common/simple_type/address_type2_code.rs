@@ -7,11 +7,10 @@ pub enum AddressType2Code {
     MLTO,
     DLVY,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl AddressType2Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             AddressType2Code::ADDR => "ADDR",

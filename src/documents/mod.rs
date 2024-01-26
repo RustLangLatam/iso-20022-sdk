@@ -1,6 +1,8 @@
-use crate::utils::XmlExt;
 use std::ops::Deref;
+
 use validator::Validate;
+
+use crate::utils::XmlExt;
 
 // Copyright 2023 Emergent Financial, LLC - All Rights Reserved
 //
@@ -163,13 +165,13 @@ pub enum DocumentType {
 }
 
 #[derive(
-    Debug,
-    Default,
-    Clone,
-    PartialEq,
-    ::serde::Serialize,
-    ::serde::Deserialize,
-    ::validator::Validate,
+Debug,
+Default,
+Clone,
+PartialEq,
+::serde::Serialize,
+::serde::Deserialize,
+::validator::Validate,
 )]
 #[serde(transparent)]
 pub struct Document {

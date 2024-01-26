@@ -3,7 +3,8 @@
 // XML Signature Syntax and Processing Version 2.0
 //
 
-use std::collections::{HashMap};
+use std::collections::HashMap;
+
 use validator::Validate;
 
 ::lazy_static::lazy_static! {
@@ -55,7 +56,7 @@ pub struct SignatureMethod<
 > {
     #[serde(rename = "HMACOutputLength", skip_serializing_if = "Option::is_none")]
     pub hmac_output_length: Option<HmacOutputLengthType>,
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(flatten, default, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
@@ -85,7 +86,7 @@ pub struct Transform<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
     #[serde(flatten)]
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(default, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, TransformTypeEnum<A>>,
     #[serde(rename = "@Algorithm")]
@@ -271,7 +272,7 @@ pub struct SignedInfo<
 pub struct DigestMethod<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(flatten, default)]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
@@ -347,7 +348,7 @@ pub struct Signature<
     pub signature_value: SignatureValue,
     #[serde(rename = "KeyInfo", skip_serializing_if = "Option::is_none")]
     pub key_info: Option<KeyInfo<E, F, G, H, I, J>>,
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(rename = "Object", skip_serializing_if = "Vec::is_empty", default)]
     pub object: Vec<Object<K>>,
     #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
@@ -378,7 +379,7 @@ pub struct PgpData<
     #[validate]
     #[serde(rename = "PGPKeyPacket")]
     pub pgp_key_packet: Base64Binary,
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(flatten, default)]
     pub value: HashMap<String, A>,
 }
@@ -426,7 +427,7 @@ pub struct SignatureProperty<
 pub struct CanonicalizationMethod<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[validate(length(min = 0,))]
+    #[validate(length(min = 0, ))]
     #[serde(flatten, default)]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
@@ -435,11 +436,12 @@ pub struct CanonicalizationMethod<
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::crypto::ecdsa::EcdsaSignature;
     use crate::models::dsig::ecdsa;
     use crate::primitive::Dmkr;
     use crate::utils::XmlExt;
+
+    use super::*;
 
     #[test]
     fn test_parse_xml_document() {

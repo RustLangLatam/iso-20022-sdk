@@ -5,11 +5,10 @@ pub enum ChargeBearerType1Code {
     SHAR,
     SLEV,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl ChargeBearerType1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             ChargeBearerType1Code::DEBT => "DEBT",

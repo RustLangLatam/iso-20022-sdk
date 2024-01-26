@@ -5,11 +5,10 @@ pub enum SettlementMethod1Code {
     COVE,
     CLRG,
     #[default]
-    UNKNOWN
+    UNKNOWN,
 }
 
 impl SettlementMethod1Code {
-
     pub fn as_str_name(&self) -> &'static str {
         match self {
             SettlementMethod1Code::INDA => "INDA",

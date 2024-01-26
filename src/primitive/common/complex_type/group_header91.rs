@@ -8,10 +8,10 @@ pub struct GroupHeader91 {
     #[serde(rename = "CreDtTm")]
     #[validate]
     pub cre_dt_tm: super::super::simple_type::ISODateTime,
-    #[serde(rename = "InstgAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "InstgAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub instg_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "InstdAgt")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "InstdAgt", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub instd_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
 }
