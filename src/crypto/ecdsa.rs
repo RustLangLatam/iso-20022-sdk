@@ -152,7 +152,7 @@ impl signature::Signer<EcdsaSignature> for MessageSigner<EcdsaSignature> {
         // Hash the message
         let mut hasher = Sha256::new();
         hasher.update(msg);
-        let hash = hasher.finalize();
+        let _hash = hasher.finalize();
 
         unimplemented!()
     }

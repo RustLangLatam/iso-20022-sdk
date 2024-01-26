@@ -2,7 +2,7 @@ pub use self::any_bic_identifier::*;
 pub use self::bicfi_identifier::*;
 pub use self::business_message_priority_code::*;
 pub use self::copy_duplicate1_code::*;
-pub use self::external_person_identification1_code::*;
+
 pub use self::iso_normalised_date_time::*;
 pub use self::name_prefix1_code::*;
 pub use self::unicode_charts_code::*;

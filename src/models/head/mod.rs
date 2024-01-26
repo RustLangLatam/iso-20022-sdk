@@ -5,8 +5,8 @@
 //! information about the sending and receiving systems, message type, and other relevant details.
 //!
 
-use std::io::Write;
-use std::str::FromStr;
+
+
 use crate::primitive::Xmlns;
 use crate::utils::ident_xml;
 

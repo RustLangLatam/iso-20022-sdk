@@ -11,11 +11,11 @@ pub use self::financial_identification_scheme_name1_choice::*;
 pub use self::financial_institution_identification18::*;
 pub use self::financial_institution_identification8::*;
 pub use self::generic_financial_identification1::*;
-pub use self::generic_identification30::*;
+
 pub use self::generic_organisation_identification1::*;
 pub use self::generic_person_identification1::*;
 pub use self::implementation_specification1::*;
-pub use self::organisation_identification29::*;
+
 pub use self::organisation_identification7::*;
 pub use self::organisation_identification_scheme_name1_choice::*;
 pub use self::other_contact1::*;
@@ -24,7 +24,7 @@ pub use self::party44_choice::*;
 pub use self::party9_choice::*;
 pub use self::party_identification135::*;
 pub use self::party_identification42::*;
-pub use self::person_identification13::*;
+
 pub use self::person_identification5::*;
 pub use self::postal_address24::*;
 pub use self::postal_address6::*;

@@ -445,7 +445,7 @@ mod tests {
 
     #[test]
     fn test_parse_xml_document() {
-        let file = r#"<Signature xmlns="http://www.w3.org/2000/09/xmldddddsig#">
+        let _file = r#"<Signature xmlns="http://www.w3.org/2000/09/xmldddddsig#">
             <SignedInfo>
                      <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
                      <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256" />
@@ -460,7 +460,7 @@ mod tests {
                   </SignedInfo>
                   <SignatureValue>AnotherBase64EncodedValue===</SignatureValue>
         </Signature>"#;
-        let file =
+        let _file =
             std::fs::read_to_string("test/resources/head/head.001.001.01.xml").expect("Unable to read file");
 
         let doc = EcdsaSignature {
