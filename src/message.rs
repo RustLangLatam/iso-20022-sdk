@@ -1,17 +1,15 @@
 use std::io::BufReader;
+
 use chrono::NaiveDateTime;
 use sxd_document::parser;
-
-use crate::models::head::head_001_001_03::{self as head};
-use crate::models::nvlp::nvlp_001_001_01::{self as nvlp};
-
 use sxd_xpath::evaluate_xpath;
 use tracing::debug;
-
-use xml::{reader::XmlEvent, EventReader};
+use xml::{EventReader, reader::XmlEvent};
 
 use crate::crypto::Signature;
 use crate::documents::{Dmkr, Document};
+use crate::models::head::head_001_001_03::self as head;
+use crate::models::nvlp::nvlp_001_001_01::self as nvlp;
 use crate::types::{BranchAndFinancialInstitutionIdentification6, FinancialInstitutionIdentification18, ISODateTime, Max35Text, OrganisationIdentification29, Party38Choice, PartyIdentification135, PersonIdentification13};
 
 /// Default Envelope Type
@@ -390,8 +388,9 @@ impl<'a, Doc> Message<'a, Doc>
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::primitives::{BicfiDec2014Identifier, GenericOrganisationIdentification1};
+
+    use super::*;
 
     #[test]
     fn test_message_builder() {

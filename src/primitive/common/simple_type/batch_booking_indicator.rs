@@ -7,8 +7,9 @@ pub struct BatchBookingIndicator {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::utils::XmlExt;
+
+    use super::*;
 
     #[test]
     fn test_parse_xml_document() {

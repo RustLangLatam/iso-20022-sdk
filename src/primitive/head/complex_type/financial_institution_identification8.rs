@@ -1,10 +1,10 @@
-use crate::validator::Validate;
+use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 pub struct FinancialInstitutionIdentification8 {
     #[serde(rename = "BICFI", skip_serializing_if = "Option::is_none")]
     #[validate]
-    pub bicfi: Option<super::super::simple_type::BICFIIdentifier>,
+    pub bicfi: Option<crate::primitive::BICFIIdentifier>,
     #[serde(rename = "ClrSysMmbId", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub clr_sys_mmb_id: Option<super::ClearingSystemMemberIdentification2>,

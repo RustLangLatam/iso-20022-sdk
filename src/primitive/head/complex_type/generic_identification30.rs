@@ -8,7 +8,7 @@ pub struct GenericIdentification30 {
     #[serde(rename = "Issr")]
     #[validate]
     pub issr: crate::primitive::Max35Text,
-    #[serde(rename = "SchmeNm")]
-    #[serde(skip_serializing_if = "Option::is_none")]
+    #[serde(rename = "SchmeNm", skip_serializing_if = "Option::is_none")]
+    #[validate]
     pub schme_nm: Option<crate::primitive::Max35Text>,
 }

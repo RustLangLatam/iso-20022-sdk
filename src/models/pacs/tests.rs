@@ -8,8 +8,8 @@ mod tests {
     use crate::models::pacs::pacs_009_001_10;
     use crate::models::pacs::pacs_010_001_05;
     use crate::models::pacs::pacs_028_001_05;
-
     use crate::primitive::Dmkr;
+    use crate::utils::XmlExt;
 
     #[test]
     fn test_parse_xml_pacs_002_001_12() {
@@ -19,7 +19,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_003_001_09() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.003.001.9.xml")
             .expect("Unable to read file");
@@ -27,7 +27,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_004_001_11() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.004.001.11.xml")
             .expect("Unable to read file");
@@ -35,7 +35,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_007_001_11() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.007.001.11.xml")
             .expect("Unable to read file");
@@ -43,7 +43,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_008_001_10() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.008.001.10.xml")
             .expect("Unable to read file");
@@ -51,7 +51,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_009_001_10() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.009.001.10.xml")
             .expect("Unable to read file");
@@ -59,7 +59,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_010_001_05() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.010.001.05.xml")
             .expect("Unable to read file");
@@ -67,7 +67,7 @@ mod tests {
         assert!(doc.is_ok())
     }
 
-     #[test]
+    #[test]
     fn test_parse_xml_pacs_028_001_05() {
         let file = std::fs::read_to_string("test/resources/documents/pacs/pacs.028.001.05.xml")
             .expect("Unable to read file");
