@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum NamePrefix2Code {
     DOCT,
     MADM,
@@ -17,7 +19,7 @@ impl NamePrefix2Code {
             NamePrefix2Code::MISS => "MISS",
             NamePrefix2Code::MIST => "MIST",
             NamePrefix2Code::MIKS => "MIKS",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -28,7 +30,7 @@ impl NamePrefix2Code {
             "MISS" => Some(NamePrefix2Code::MISS),
             "MIST" => Some(NamePrefix2Code::MIST),
             "MIKS" => Some(NamePrefix2Code::MIKS),
-            _ => None
+            _ => None,
         }
     }
 }

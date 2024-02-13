@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum CopyDuplicate1Code {
     CODU,
     COPY,
@@ -13,7 +15,7 @@ impl CopyDuplicate1Code {
             CopyDuplicate1Code::CODU => "CODU",
             CopyDuplicate1Code::COPY => "COPY",
             CopyDuplicate1Code::DUPL => "DUPL",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -22,7 +24,7 @@ impl CopyDuplicate1Code {
             "CODU" => Some(CopyDuplicate1Code::CODU),
             "COPY" => Some(CopyDuplicate1Code::COPY),
             "DUPL" => Some(CopyDuplicate1Code::DUPL),
-            _ => None
+            _ => None,
         }
     }
 }

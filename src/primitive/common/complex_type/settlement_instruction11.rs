@@ -13,19 +13,28 @@ pub struct SettlementInstruction11 {
     #[serde(rename = "InstgRmbrsmntAgt", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub instg_rmbrsmnt_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "InstgRmbrsmntAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "InstgRmbrsmntAgtAcct",
+        skip_serializing_if = "Option::is_none"
+    )]
     #[validate]
     pub instg_rmbrsmnt_agt_acct: Option<super::CashAccount40>,
     #[serde(rename = "InstdRmbrsmntAgt", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub instd_rmbrsmnt_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "InstdRmbrsmntAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "InstdRmbrsmntAgtAcct",
+        skip_serializing_if = "Option::is_none"
+    )]
     #[validate]
     pub instd_rmbrsmnt_agt_acct: Option<super::CashAccount40>,
     #[serde(rename = "ThrdRmbrsmntAgt", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub thrd_rmbrsmnt_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(rename = "ThrdRmbrsmntAgtAcct", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "ThrdRmbrsmntAgtAcct",
+        skip_serializing_if = "Option::is_none"
+    )]
     #[validate]
     pub thrd_rmbrsmnt_agt_acct: Option<super::CashAccount40>,
 }

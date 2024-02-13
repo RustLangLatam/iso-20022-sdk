@@ -1,7 +1,9 @@
 use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct PaymentTransaction135<A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct PaymentTransaction135<
+    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "RvslId", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub rvsl_id: Option<super::super::simple_type::Max35Text>,
@@ -23,7 +25,10 @@ pub struct PaymentTransaction135<A: std::fmt::Debug + Default + Clone + PartialE
     #[serde(rename = "OrgnlClrSysRef", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub orgnl_clr_sys_ref: Option<super::super::simple_type::Max35Text>,
-    #[serde(rename = "OrgnlIntrBkSttlmAmt", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "OrgnlIntrBkSttlmAmt",
+        skip_serializing_if = "Option::is_none"
+    )]
     #[validate]
     pub orgnl_intr_bk_sttlm_amt: Option<super::ActiveOrHistoricCurrencyAndAmount>,
     #[serde(rename = "RvsdIntrBkSttlmAmt")]
@@ -57,13 +62,21 @@ pub struct PaymentTransaction135<A: std::fmt::Debug + Default + Clone + PartialE
     #[serde(rename = "InstdAgt", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub instd_agt: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(default, rename = "RvslRsnInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "RvslRsnInf",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub rvsl_rsn_inf: Vec<super::PaymentReversalReason9>,
     #[serde(rename = "OrgnlTxRef", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub orgnl_tx_ref: Option<super::OriginalTransactionReference35>,
-    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "SplmtryData",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

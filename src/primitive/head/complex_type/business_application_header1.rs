@@ -3,7 +3,9 @@ use ::validator::Validate;
 use crate::primitive::Max35Text;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct BusinessApplicationHeader1<Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct BusinessApplicationHeader1<
+    Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "CharSet", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub char_set: Option<super::super::simple_type::UnicodeChartsCode>,

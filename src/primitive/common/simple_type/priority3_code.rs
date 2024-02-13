@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum Priority3Code {
     URGT,
     HIGH,
@@ -13,7 +15,7 @@ impl Priority3Code {
             Priority3Code::URGT => "URGT",
             Priority3Code::HIGH => "HIGH",
             Priority3Code::NORM => "NORM",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -22,7 +24,7 @@ impl Priority3Code {
             "URGT" => Some(Priority3Code::URGT),
             "HIGH" => Some(Priority3Code::HIGH),
             "NORM" => Some(Priority3Code::NORM),
-            _ => None
+            _ => None,
         }
     }
 }

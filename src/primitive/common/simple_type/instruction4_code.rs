@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum Instruction4Code {
     PHOA,
     TELA,
@@ -11,7 +13,7 @@ impl Instruction4Code {
         match self {
             Instruction4Code::PHOA => "PHOA",
             Instruction4Code::TELA => "TELA",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -19,7 +21,7 @@ impl Instruction4Code {
         match value {
             "PHOA" => Some(Instruction4Code::PHOA),
             "TELA" => Some(Instruction4Code::TELA),
-            _ => None
+            _ => None,
         }
     }
 }

@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum AddressType2Code {
     ADDR,
     PBOX,
@@ -19,7 +21,7 @@ impl AddressType2Code {
             AddressType2Code::BIZZ => "BIZZ",
             AddressType2Code::MLTO => "MLTO",
             AddressType2Code::DLVY => "DLVY",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -31,7 +33,7 @@ impl AddressType2Code {
             "BIZZ" => Some(AddressType2Code::BIZZ),
             "MLTO" => Some(AddressType2Code::MLTO),
             "DLVY" => Some(AddressType2Code::DLVY),
-            _ => None
+            _ => None,
         }
     }
 }

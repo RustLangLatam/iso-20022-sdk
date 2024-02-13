@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum RegulatoryReportingType1Code {
     CRED,
     DEBT,
@@ -13,7 +15,7 @@ impl RegulatoryReportingType1Code {
             RegulatoryReportingType1Code::CRED => "CRED",
             RegulatoryReportingType1Code::DEBT => "DEBT",
             RegulatoryReportingType1Code::BOTH => "BOTH",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -22,7 +24,7 @@ impl RegulatoryReportingType1Code {
             "CRED" => Some(RegulatoryReportingType1Code::CRED),
             "DEBT" => Some(RegulatoryReportingType1Code::DEBT),
             "BOTH" => Some(RegulatoryReportingType1Code::BOTH),
-            _ => None
+            _ => None,
         }
     }
 }

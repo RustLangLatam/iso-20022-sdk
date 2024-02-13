@@ -15,7 +15,12 @@ where
     fn to_xml(&self) -> Result<String, quick_xml::DeError> {
         let mut buffer = String::new();
         quick_xml::se::to_writer(&mut buffer, self)?;
+        Ok(buffer)
+    }
 
+    fn to_ident_xml(&self) -> Result<String, quick_xml::DeError> {
+        let mut buffer = String::new();
+        quick_xml::se::to_writer(&mut buffer, self)?;
         Ok(ident_xml(&buffer))
     }
 

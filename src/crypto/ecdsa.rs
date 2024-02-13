@@ -27,7 +27,7 @@ pub use const_oid::db::rfc5912::SECP_256_R_1;
 use elliptic_curve::sec1::{Coordinates, ToEncodedPoint};
 use sha2::{Digest, Sha256};
 
-use crate::models::dsig::{dsig, ecdsa, EcPointType, FieldElemType, ID, xpath};
+use crate::models::dsig::{dsig, ecdsa, xpath, EcPointType, FieldElemType, ID};
 use crate::primitive::Dmkr;
 
 use super::{MessageSigner, XmlSignature};
@@ -68,12 +68,14 @@ impl XmlSignature for EcdsaSignature {
             .map(|path| dsig::Transform {
                 // use filter2 for xpath transformations
                 algorithm: "http://www.w3.org/2002/06/xmldsig-filter2".into(),
-                value: HashMap::from([("".to_string(), dsig::TransformTypeEnum {
-                    x_path: Some(path),
-                    any: None,
-                })]),
-            },
-            )
+                value: HashMap::from([(
+                    "".to_string(),
+                    dsig::TransformTypeEnum {
+                        x_path: Some(path),
+                        any: None,
+                    },
+                )]),
+            })
             .collect();
 
         let id = ID {
@@ -104,9 +106,7 @@ impl XmlSignature for EcdsaSignature {
                 uri: Some(uri),
                 // Transforms specify how the document was processed
                 // prior to calculating the digest.
-                transforms: Some(dsig::Transforms {
-                    transform
-                }),
+                transforms: Some(dsig::Transforms { transform }),
                 digest_method: dsig::DigestMethod {
                     algorithm: super::DEFAULT_DIGEST_METHOD_ALGORITHM.into(),
                     value: Default::default(),
@@ -122,24 +122,24 @@ impl XmlSignature for EcdsaSignature {
                 hmac_output_length: Some(dsig::HmacOutputLengthType {
                     value: super::SHA_256_HMAC_OUTPUT_LENGTH,
                 }),
-                algorithm: format!(
-                    "{}#ecdsa-sha256",
-                    super::DEFAULT_SIGNATURE_METHOD_ALGORITHM
-                ),
-                value: HashMap::from([("".to_string(), ecdsa::EcdsaKeyValue {
-                    value: ecdsa::EcdsaKeyValueType {
-                        domain_parameters: Some(ecdsa::DomainParamsType {
-                            value: ecdsa::DomainParamsTypeEnum {
-                                named_curve: Some(ecdsa::NamedCurveType {
-                                    urn: SECP_256_R_1.to_string(),
-                                }),
-                                explicit_params: None,
-                            },
-                        }),
-                        public_key: ec_points,
-                        xmlns: ecdsa::namespace(),
+                algorithm: format!("{}#ecdsa-sha256", super::DEFAULT_SIGNATURE_METHOD_ALGORITHM),
+                value: HashMap::from([(
+                    "".to_string(),
+                    ecdsa::EcdsaKeyValue {
+                        value: ecdsa::EcdsaKeyValueType {
+                            domain_parameters: Some(ecdsa::DomainParamsType {
+                                value: ecdsa::DomainParamsTypeEnum {
+                                    named_curve: Some(ecdsa::NamedCurveType {
+                                        urn: SECP_256_R_1.to_string(),
+                                    }),
+                                    explicit_params: None,
+                                },
+                            }),
+                            public_key: ec_points,
+                            xmlns: ecdsa::namespace(),
+                        },
                     },
-                })]),
+                )]),
             },
         };
 

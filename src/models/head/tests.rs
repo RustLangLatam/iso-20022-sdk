@@ -22,5 +22,6 @@ mod tests {
         let doc = AppHdr::<Dmkr>::from_xml(file.as_str());
         assert!(doc.clone().is_ok_and(|v| v.is_head_001_001_02()));
         assert_eq!(file, doc.unwrap().to_xml().unwrap());
+        assert!(false)
     }
 }

@@ -5,8 +5,6 @@
 //! information about the sending and receiving systems, message type, and other relevant details.
 //!
 
-
-
 use crate::primitive::Xmlns;
 use crate::utils::ident_xml;
 
@@ -35,7 +33,7 @@ impl<
 where
     Signature: ::serde::de::DeserializeOwned,
 {
-    fn from_xml(s: &str) -> Result<Self, quick_xml::DeError> {
+    pub fn from_xml(s: &str) -> Result<Self, quick_xml::DeError> {
         use crate::utils::XmlExt;
         let xmlns: Xmlns = quick_xml::de::from_str(s)?;
         let schema = xmlns.replace(crate::documents::DEFAULT_XLMNS_PREFIX, "");
@@ -49,7 +47,7 @@ where
         Ok(doc)
     }
 
-    fn to_xml(&self) -> Result<String, quick_xml::DeError> {
+    pub fn to_xml(&self) -> Result<String, quick_xml::DeError> {
         let mut buffer = String::new();
         quick_xml::se::to_writer(&mut buffer, self)?;
 
@@ -60,5 +58,3 @@ where
         Ok(writer)
     }
 }
-
-

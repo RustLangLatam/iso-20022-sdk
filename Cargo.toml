@@ -1,6 +1,6 @@
 [package]
 name = "iso-20022-sdk"
-version = "0.1.10-dev.4"
+version = "0.1.10-dev.5"
 authors = ["ProxymaX Development Team", "Eleazar Garrido <rust.lang.latam@gmail.com>"]
 repository = "https://gitlab.com/proximax-latam/ncore"
 homepage = "https://www.proximax.io"
@@ -10,6 +10,9 @@ license = "Apache-2.0"
 edition = "2021"
 rust-version = "1.75.0"
 publish = false
+
+[badges]
+maintenance = { status = "actively-developed" }
 
 [lib]
 name = "iso_20022_sdk"

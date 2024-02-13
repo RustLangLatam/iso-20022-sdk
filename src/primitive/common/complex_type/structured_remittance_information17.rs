@@ -2,7 +2,11 @@ use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 pub struct StructuredRemittanceInformation17 {
-    #[serde(default, rename = "RfrdDocInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "RfrdDocInf",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub rfrd_doc_inf: Vec<super::ReferredDocumentInformation7>,
     #[serde(rename = "RfrdDocAmt", skip_serializing_if = "Option::is_none")]
@@ -23,7 +27,11 @@ pub struct StructuredRemittanceInformation17 {
     #[serde(rename = "GrnshmtRmt", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub grnshmt_rmt: Option<super::Garnishment3>,
-    #[serde(default, rename = "AddtlRmtInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "AddtlRmtInf",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate(length(min = 0, max = 3))]
     pub addtl_rmt_inf: Vec<super::super::simple_type::Max140Text>,
 }

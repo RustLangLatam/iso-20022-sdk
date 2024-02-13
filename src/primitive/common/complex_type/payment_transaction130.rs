@@ -1,7 +1,9 @@
 use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct PaymentTransaction130<A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct PaymentTransaction130<
+    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "StsId", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub sts_id: Option<super::super::simple_type::Max35Text>,
@@ -50,7 +52,11 @@ pub struct PaymentTransaction130<A: std::fmt::Debug + Default + Clone + PartialE
     #[serde(rename = "OrgnlTxRef", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub orgnl_tx_ref: Option<super::OriginalTransactionReference35>,
-    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "SplmtryData",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

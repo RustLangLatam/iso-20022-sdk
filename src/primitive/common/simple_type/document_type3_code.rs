@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum DocumentType3Code {
     RADM,
     RPIN,
@@ -19,7 +21,7 @@ impl DocumentType3Code {
             DocumentType3Code::DISP => "DISP",
             DocumentType3Code::PUOR => "PUOR",
             DocumentType3Code::SCOR => "SCOR",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -31,7 +33,7 @@ impl DocumentType3Code {
             "DISP" => Some(DocumentType3Code::DISP),
             "PUOR" => Some(DocumentType3Code::PUOR),
             "SCOR" => Some(DocumentType3Code::SCOR),
-            _ => None
+            _ => None,
         }
     }
 }

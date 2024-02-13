@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum ChargeBearerType1Code {
     DEBT,
     CRED,
@@ -15,7 +17,7 @@ impl ChargeBearerType1Code {
             ChargeBearerType1Code::CRED => "CRED",
             ChargeBearerType1Code::SHAR => "SHAR",
             ChargeBearerType1Code::SLEV => "SLEV",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -25,7 +27,7 @@ impl ChargeBearerType1Code {
             "CRED" => Some(ChargeBearerType1Code::CRED),
             "SHAR" => Some(ChargeBearerType1Code::SHAR),
             "SLEV" => Some(ChargeBearerType1Code::SLEV),
-            _ => None
+            _ => None,
         }
     }
 }

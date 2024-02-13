@@ -13,7 +13,9 @@ mod tests {
 
     #[test]
     fn test_regex() {
-        let doc = Max35Text { value: "WYTTXXXXWYTTXXXXWYTTXXXXWYTTXXXXWYTTXXXXWYTTXXXX".to_string() };
+        let doc = Max35Text {
+            value: "WYTTXXXXWYTTXXXXWYTTXXXXWYTTXXXXWYTTXXXXWYTTXXXX".to_string(),
+        };
         println!("{:?}", doc.validate());
         assert!(doc.validate().is_ok())
     }

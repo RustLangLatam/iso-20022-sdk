@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum PaymentMethod4Code {
     CHK,
     TRF,
@@ -15,7 +17,7 @@ impl PaymentMethod4Code {
             PaymentMethod4Code::TRF => "TRF",
             PaymentMethod4Code::DD => "DD",
             PaymentMethod4Code::TRA => "TRA",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -25,7 +27,7 @@ impl PaymentMethod4Code {
             "TRF" => Some(PaymentMethod4Code::TRF),
             "DD" => Some(PaymentMethod4Code::DD),
             "TRA" => Some(PaymentMethod4Code::TRA),
-            _ => None
+            _ => None,
         }
     }
 }

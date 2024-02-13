@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum Frequency6Code {
     YEAR,
     MNTH,
@@ -25,7 +27,7 @@ impl Frequency6Code {
             Frequency6Code::ADHO => "ADHO",
             Frequency6Code::INDA => "INDA",
             Frequency6Code::FRTN => "FRTN",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -40,7 +42,7 @@ impl Frequency6Code {
             "ADHO" => Some(Frequency6Code::ADHO),
             "INDA" => Some(Frequency6Code::INDA),
             "FRTN" => Some(Frequency6Code::FRTN),
-            _ => None
+            _ => None,
         }
     }
 }

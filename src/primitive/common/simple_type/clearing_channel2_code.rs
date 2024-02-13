@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum ClearingChannel2Code {
     RTGS,
     RTNS,
@@ -15,7 +17,7 @@ impl ClearingChannel2Code {
             ClearingChannel2Code::RTNS => "RTNS",
             ClearingChannel2Code::MPNS => "MPNS",
             ClearingChannel2Code::BOOK => "BOOK",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -25,7 +27,7 @@ impl ClearingChannel2Code {
             "RTNS" => Some(ClearingChannel2Code::RTNS),
             "MPNS" => Some(ClearingChannel2Code::MPNS),
             "BOOK" => Some(ClearingChannel2Code::BOOK),
-            _ => None
+            _ => None,
         }
     }
 }

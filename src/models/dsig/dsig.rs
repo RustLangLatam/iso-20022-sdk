@@ -56,7 +56,7 @@ pub struct SignatureMethod<
 > {
     #[serde(rename = "HMACOutputLength", skip_serializing_if = "Option::is_none")]
     pub hmac_output_length: Option<HmacOutputLengthType>,
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(flatten, default, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
@@ -86,7 +86,7 @@ pub struct Transform<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
     #[serde(flatten)]
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(default, skip_serializing_if = "HashMap::is_empty")]
     pub value: HashMap<String, TransformTypeEnum<A>>,
     #[serde(rename = "@Algorithm")]
@@ -110,7 +110,6 @@ pub struct X509DataTypeEnum<
     #[serde(rename = "X509SubjectName", skip_serializing_if = "Option::is_none")]
     pub x_509_subject_name: Option<String>,
 }
-
 
 #[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, validator::Validate)]
 pub struct X509Data<
@@ -243,7 +242,11 @@ pub struct KeyName {
 pub struct SignatureProperties<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[serde(rename = "SignatureProperty", default, skip_serializing_if = "Vec::is_empty")]
+    #[serde(
+        rename = "SignatureProperty",
+        default,
+        skip_serializing_if = "Vec::is_empty"
+    )]
     pub signature_property: Vec<SignatureProperty<A>>,
     #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
     pub id: Option<ID>,
@@ -272,7 +275,7 @@ pub struct SignedInfo<
 pub struct DigestMethod<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(flatten, default)]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
@@ -348,7 +351,7 @@ pub struct Signature<
     pub signature_value: SignatureValue,
     #[serde(rename = "KeyInfo", skip_serializing_if = "Option::is_none")]
     pub key_info: Option<KeyInfo<E, F, G, H, I, J>>,
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(rename = "Object", skip_serializing_if = "Vec::is_empty", default)]
     pub object: Vec<Object<K>>,
     #[serde(rename = "@Id", skip_serializing_if = "Option::is_none")]
@@ -379,7 +382,7 @@ pub struct PgpData<
     #[validate]
     #[serde(rename = "PGPKeyPacket")]
     pub pgp_key_packet: Base64Binary,
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(flatten, default)]
     pub value: HashMap<String, A>,
 }
@@ -427,7 +430,7 @@ pub struct SignatureProperty<
 pub struct CanonicalizationMethod<
     A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
 > {
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(flatten, default)]
     pub value: HashMap<String, A>,
     #[serde(rename = "@Algorithm")]
@@ -460,8 +463,8 @@ mod tests {
                   </SignedInfo>
                   <SignatureValue>AnotherBase64EncodedValue===</SignatureValue>
         </Signature>"#;
-        let _file =
-            std::fs::read_to_string("test/resources/head/head.001.001.01.xml").expect("Unable to read file");
+        let _file = std::fs::read_to_string("test/resources/head/head.001.001.01.xml")
+            .expect("Unable to read file");
 
         let doc = EcdsaSignature {
             inner: Signature::<
@@ -487,7 +490,7 @@ mod tests {
             >::default(),
         };
 
-        println!("{:#?}", doc.to_xml());
+        println!("{:#?}", doc.to_ident_xml());
 
         // println!("{}", serde_json::to_string_pretty(&doc.value.sgntr).unwrap());
 

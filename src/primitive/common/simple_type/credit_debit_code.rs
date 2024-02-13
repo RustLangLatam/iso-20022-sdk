@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum CreditDebitCode {
     CRDT,
     DBIT,
@@ -11,7 +13,7 @@ impl CreditDebitCode {
         match self {
             CreditDebitCode::CRDT => "CRDT",
             CreditDebitCode::DBIT => "DBIT",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -19,7 +21,7 @@ impl CreditDebitCode {
         match value {
             "CRDT" => Some(CreditDebitCode::CRDT),
             "DBIT" => Some(CreditDebitCode::DBIT),
-            _ => None
+            _ => None,
         }
     }
 }

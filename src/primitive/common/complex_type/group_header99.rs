@@ -23,7 +23,10 @@ pub struct GroupHeader99 {
     #[serde(rename = "GrpRtr", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub grp_rtr: Option<super::super::simple_type::TrueFalseIndicator>,
-    #[serde(rename = "TtlRtrdIntrBkSttlmAmt", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "TtlRtrdIntrBkSttlmAmt",
+        skip_serializing_if = "Option::is_none"
+    )]
     #[validate]
     pub ttl_rtrd_intr_bk_sttlm_amt: Option<super::ActiveCurrencyAndAmount>,
     #[serde(rename = "IntrBkSttlmDt", skip_serializing_if = "Option::is_none")]

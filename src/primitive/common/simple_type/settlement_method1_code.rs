@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum SettlementMethod1Code {
     INDA,
     INGA,
@@ -15,7 +17,7 @@ impl SettlementMethod1Code {
             SettlementMethod1Code::INGA => "INGA",
             SettlementMethod1Code::COVE => "COVE",
             SettlementMethod1Code::CLRG => "CLRG",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -25,7 +27,7 @@ impl SettlementMethod1Code {
             "INGA" => Some(SettlementMethod1Code::INGA),
             "COVE" => Some(SettlementMethod1Code::COVE),
             "CLRG" => Some(SettlementMethod1Code::CLRG),
-            _ => None
+            _ => None,
         }
     }
 }

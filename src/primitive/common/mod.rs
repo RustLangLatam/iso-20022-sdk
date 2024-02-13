@@ -4,8 +4,8 @@ pub use self::complex_type::*;
 pub use self::simple_type::*;
 pub use self::xmlns::Xmlns;
 
-mod simple_type;
 mod complex_type;
+mod simple_type;
 mod xmlns;
 
 /// Document Marker (Dmkr) is a type that is used as a default value

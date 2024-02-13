@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum DocumentType6Code {
     MSIN,
     CNFA,
@@ -39,7 +41,7 @@ impl DocumentType6Code {
             DocumentType6Code::AROI => "AROI",
             DocumentType6Code::TSUT => "TSUT",
             DocumentType6Code::PUOR => "PUOR",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -61,7 +63,7 @@ impl DocumentType6Code {
             "AROI" => Some(DocumentType6Code::AROI),
             "TSUT" => Some(DocumentType6Code::TSUT),
             "PUOR" => Some(DocumentType6Code::PUOR),
-            _ => None
+            _ => None,
         }
     }
 }

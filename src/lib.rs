@@ -30,6 +30,8 @@ pub mod documents;
 pub(crate) mod utils;
 
 pub mod prelude {
+    pub use super::utils::*;
+
     #[cfg(feature = "crypto")]
     pub use super::crypto::*;
     pub use super::documents::*;

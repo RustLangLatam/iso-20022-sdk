@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum Authorisation1Code {
     AUTH,
     FDET,
@@ -15,7 +17,7 @@ impl Authorisation1Code {
             Authorisation1Code::FDET => "FDET",
             Authorisation1Code::FSUM => "FSUM",
             Authorisation1Code::ILEV => "ILEV",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -25,7 +27,7 @@ impl Authorisation1Code {
             "FDET" => Some(Authorisation1Code::FDET),
             "FSUM" => Some(Authorisation1Code::FSUM),
             "ILEV" => Some(Authorisation1Code::ILEV),
-            _ => None
+            _ => None,
         }
     }
 }

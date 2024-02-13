@@ -1,7 +1,9 @@
 use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct CreditTransferTransaction56<A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct CreditTransferTransaction56<
+    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "PmtId")]
     #[validate]
     pub pmt_id: super::PaymentIdentification13,
@@ -94,10 +96,18 @@ pub struct CreditTransferTransaction56<A: std::fmt::Debug + Default + Clone + Pa
     #[serde(rename = "UltmtCdtr", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub ultmt_cdtr: Option<super::BranchAndFinancialInstitutionIdentification6>,
-    #[serde(default, rename = "InstrForCdtrAgt", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "InstrForCdtrAgt",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub instr_for_cdtr_agt: Vec<super::InstructionForCreditorAgent3>,
-    #[serde(default, rename = "InstrForNxtAgt", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "InstrForNxtAgt",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub instr_for_nxt_agt: Vec<super::InstructionForNextAgent1>,
     #[serde(rename = "Purp", skip_serializing_if = "Option::is_none")]
@@ -109,7 +119,11 @@ pub struct CreditTransferTransaction56<A: std::fmt::Debug + Default + Clone + Pa
     #[serde(rename = "UndrlygCstmrCdtTrf", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub undrlyg_cstmr_cdt_trf: Option<super::CreditTransferTransaction52>,
-    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "SplmtryData",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

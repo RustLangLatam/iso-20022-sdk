@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum SequenceType3Code {
     FRST,
     RCUR,
@@ -17,7 +19,7 @@ impl SequenceType3Code {
             SequenceType3Code::FNAL => "FNAL",
             SequenceType3Code::OOFF => "OOFF",
             SequenceType3Code::RPRE => "RPRE",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -28,7 +30,7 @@ impl SequenceType3Code {
             "FNAL" => Some(SequenceType3Code::FNAL),
             "OOFF" => Some(SequenceType3Code::OOFF),
             "RPRE" => Some(SequenceType3Code::RPRE),
-            _ => None
+            _ => None,
         }
     }
 }

@@ -19,11 +19,14 @@ use quick_xml::DeError;
 use crate::models;
 use crate::primitive::Xmlns;
 
-use super::{DEFAULT_XLMNS_PREFIX, Dmkr};
+use super::{Dmkr, DEFAULT_XLMNS_PREFIX};
 
 // Re-export the iso 20022 pacs module
 
-#[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumIter, EnumAsInner)]
+#[derive(
+    Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumIter, EnumAsInner,
+)]
+#[serde(untagged)]
 pub enum Document {
     // pacs
     pacs_002_001_12(models::pacs::pacs_002_001_12::Document<Dmkr>),

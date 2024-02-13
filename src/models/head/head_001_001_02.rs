@@ -19,10 +19,11 @@ pub struct AppHdr<
     pub value: BusinessApplicationHeaderV02<Signature>,
 }
 
-
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
 #[serde(rename = "AppHdr")]
-pub struct BusinessApplicationHeaderV02<Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct BusinessApplicationHeaderV02<
+    Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "@xmlns", default = "namespace")]
     pub xmlns: String,
     #[serde(rename = "CharSet", skip_serializing_if = "Option::is_none")]
@@ -64,7 +65,7 @@ pub struct BusinessApplicationHeaderV02<Signature: std::fmt::Debug + Default + C
     #[validate]
     pub sgntr: Option<crate::primitive::SignatureEnvelope<Signature>>,
     #[serde(rename = "Rltd")]
-    #[validate(length(min = 0, ))]
+    #[validate(length(min = 0,))]
     #[serde(default)]
     pub rltd: Vec<crate::primitive::BusinessApplicationHeader5<Signature>>,
 }

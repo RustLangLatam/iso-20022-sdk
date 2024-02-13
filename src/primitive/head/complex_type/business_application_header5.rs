@@ -1,9 +1,14 @@
 use ::validator::Validate;
 
-use crate::primitive::{BusinessMessagePriorityCode, CopyDuplicate1Code, ISODateTime, Max35Text, UnicodeChartsCode, YesNoIndicator};
+use crate::primitive::{
+    BusinessMessagePriorityCode, CopyDuplicate1Code, ISODateTime, Max35Text, UnicodeChartsCode,
+    YesNoIndicator,
+};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct BusinessApplicationHeader5<Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct BusinessApplicationHeader5<
+    Signature: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "CharSet", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub char_set: Option<UnicodeChartsCode>,

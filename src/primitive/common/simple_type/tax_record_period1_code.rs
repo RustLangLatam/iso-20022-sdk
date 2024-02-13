@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum TaxRecordPeriod1Code {
     MM01,
     MM02,
@@ -43,7 +45,7 @@ impl TaxRecordPeriod1Code {
             TaxRecordPeriod1Code::QTR4 => "QTR4",
             TaxRecordPeriod1Code::HLF1 => "HLF1",
             TaxRecordPeriod1Code::HLF2 => "HLF2",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -67,7 +69,7 @@ impl TaxRecordPeriod1Code {
             "QTR4" => Some(TaxRecordPeriod1Code::QTR4),
             "HLF1" => Some(TaxRecordPeriod1Code::HLF1),
             "HLF2" => Some(TaxRecordPeriod1Code::HLF2),
-            _ => None
+            _ => None,
         }
     }
 }

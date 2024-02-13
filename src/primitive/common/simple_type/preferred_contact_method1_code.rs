@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum PreferredContactMethod1Code {
     LETT,
     MAIL,
@@ -17,7 +19,7 @@ impl PreferredContactMethod1Code {
             PreferredContactMethod1Code::PHON => "PHON",
             PreferredContactMethod1Code::FAXX => "FAXX",
             PreferredContactMethod1Code::CELL => "CELL",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -28,7 +30,7 @@ impl PreferredContactMethod1Code {
             "PHON" => Some(PreferredContactMethod1Code::PHON),
             "FAXX" => Some(PreferredContactMethod1Code::FAXX),
             "CELL" => Some(PreferredContactMethod1Code::CELL),
-            _ => None
+            _ => None,
         }
     }
 }

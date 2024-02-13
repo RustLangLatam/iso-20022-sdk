@@ -23,7 +23,11 @@ pub struct OriginalGroupHeader17 {
     #[serde(default, rename = "StsRsnInf", skip_serializing_if = "<[_]>::is_empty")]
     #[validate]
     pub sts_rsn_inf: Vec<super::StatusReasonInformation12>,
-    #[serde(default, rename = "NbOfTxsPerSts", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "NbOfTxsPerSts",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub nb_of_txs_per_sts: Vec<super::NumberOfTransactionsPerStatus5>,
 }

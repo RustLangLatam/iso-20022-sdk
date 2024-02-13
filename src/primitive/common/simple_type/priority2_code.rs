@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum Priority2Code {
     HIGH,
     NORM,
@@ -11,7 +13,7 @@ impl Priority2Code {
         match self {
             Priority2Code::HIGH => "HIGH",
             Priority2Code::NORM => "NORM",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -19,7 +21,7 @@ impl Priority2Code {
         match value {
             "HIGH" => Some(Priority2Code::HIGH),
             "NORM" => Some(Priority2Code::NORM),
-            _ => None
+            _ => None,
         }
     }
 }

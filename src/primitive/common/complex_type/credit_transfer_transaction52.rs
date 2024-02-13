@@ -71,10 +71,18 @@ pub struct CreditTransferTransaction52 {
     #[serde(rename = "UltmtCdtr", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub ultmt_cdtr: Option<super::PartyIdentification135>,
-    #[serde(default, rename = "InstrForCdtrAgt", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "InstrForCdtrAgt",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub instr_for_cdtr_agt: Vec<super::InstructionForCreditorAgent3>,
-    #[serde(default, rename = "InstrForNxtAgt", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "InstrForNxtAgt",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub instr_for_nxt_agt: Vec<super::InstructionForNextAgent1>,
     #[serde(rename = "Tax", skip_serializing_if = "Option::is_none")]

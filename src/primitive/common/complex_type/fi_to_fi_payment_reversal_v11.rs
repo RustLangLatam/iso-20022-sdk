@@ -1,7 +1,9 @@
 use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct FIToFIPaymentReversalV11<A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct FIToFIPaymentReversalV11<
+    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "GrpHdr")]
     #[validate]
     pub grp_hdr: super::GroupHeader97,
@@ -11,7 +13,11 @@ pub struct FIToFIPaymentReversalV11<A: std::fmt::Debug + Default + Clone + Parti
     #[serde(default, rename = "TxInf", skip_serializing_if = "<[_]>::is_empty")]
     #[validate]
     pub tx_inf: Vec<super::PaymentTransaction135<A>>,
-    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "SplmtryData",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }

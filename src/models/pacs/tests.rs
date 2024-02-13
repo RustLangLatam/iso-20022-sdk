@@ -50,7 +50,8 @@ mod tests {
         let doc = pacs_008_001_10::Document::<Dmkr>::from_xml(file.as_str());
 
         assert!(doc.is_ok());
-        assert_eq!(file, doc.unwrap().to_xml().unwrap())
+        assert_eq!(file, doc.unwrap().to_ident_xml().unwrap());
+        assert!(false);
     }
 
     #[test]

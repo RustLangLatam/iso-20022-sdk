@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum RemittanceLocationMethod2Code {
     FAXI,
     EDIC,
@@ -19,7 +21,7 @@ impl RemittanceLocationMethod2Code {
             RemittanceLocationMethod2Code::EMAL => "EMAL",
             RemittanceLocationMethod2Code::POST => "POST",
             RemittanceLocationMethod2Code::SMSM => "SMSM",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -31,7 +33,7 @@ impl RemittanceLocationMethod2Code {
             "EMAL" => Some(RemittanceLocationMethod2Code::EMAL),
             "POST" => Some(RemittanceLocationMethod2Code::POST),
             "SMSM" => Some(RemittanceLocationMethod2Code::SMSM),
-            _ => None
+            _ => None,
         }
     }
 }

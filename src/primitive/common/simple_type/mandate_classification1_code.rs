@@ -1,4 +1,6 @@
-#[derive(Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize)]
+#[derive(
+    Clone, Copy, Default, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, Serialize, Deserialize,
+)]
 pub enum MandateClassification1Code {
     FIXE,
     USGB,
@@ -13,7 +15,7 @@ impl MandateClassification1Code {
             MandateClassification1Code::FIXE => "FIXE",
             MandateClassification1Code::USGB => "USGB",
             MandateClassification1Code::VARI => "VARI",
-            _ => "UNKNOWN"
+            _ => "UNKNOWN",
         }
     }
 
@@ -22,7 +24,7 @@ impl MandateClassification1Code {
             "FIXE" => Some(MandateClassification1Code::FIXE),
             "USGB" => Some(MandateClassification1Code::USGB),
             "VARI" => Some(MandateClassification1Code::VARI),
-            _ => None
+            _ => None,
         }
     }
 }

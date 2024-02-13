@@ -49,10 +49,7 @@ impl TryFrom<&str> for Document {
 pub mod tests {
     use chrono::Utc;
 
-    use crate::documents::{
-        Dmkr,
-        remt::remt_001_001_05,
-    };
+    use crate::documents::{remt::remt_001_001_05, Dmkr};
 
     pub fn party_identification_135() -> Result<
         remt_001_001_05::PartyIdentification135,

@@ -244,4 +244,3 @@ mod address_type2_code;
 mod true_false_indicator;
 
 mod frequency6_code;
-

@@ -1,8 +1,5 @@
-
-
+use crate::primitive::Xmlns;
 use validator::Validate;
-
-
 
 // Copyright 2023 Emergent Financial, LLC - All Rights Reserved
 //
@@ -96,7 +93,18 @@ pub struct Dmkr {
 }
 
 /// Enumeration of iso-20022 documents
-#[derive(Debug, Default, Clone, PartialEq, Serialize, Deserialize, Display, EnumString, EnumIter, EnumAsInner)]
+#[derive(
+    Debug,
+    Default,
+    Clone,
+    PartialEq,
+    Serialize,
+    Deserialize,
+    Display,
+    EnumString,
+    EnumIter,
+    EnumAsInner,
+)]
 #[serde(rename = "Document")]
 pub enum DocumentType {
     #[cfg(feature = "acmt")]
@@ -165,13 +173,13 @@ pub enum DocumentType {
 }
 
 #[derive(
-Debug,
-Default,
-Clone,
-PartialEq,
-::serde::Serialize,
-::serde::Deserialize,
-::validator::Validate,
+    Debug,
+    Default,
+    Clone,
+    PartialEq,
+    ::serde::Serialize,
+    ::serde::Deserialize,
+    ::validator::Validate,
 )]
 #[serde(transparent)]
 pub struct Document {
@@ -369,7 +377,7 @@ impl Document {
         Self { value: None }
     }
 
-    fn from_xml(xml_str: &str) -> Result<Self, quick_xml::DeError> {
+    pub fn from_xml(xml_str: &str) -> Result<Self, quick_xml::DeError> {
         // Deserialize the XML string into the target structure.
         // let value: Xmlns = quick_xml::de::from_str(xml_str)?;
         //
@@ -388,6 +396,11 @@ impl Document {
         //     .validate()
         //     .map_err(|err| quick_xml::DeError::Custom(err.to_string()))?;
 
-        Ok(Default::default())
+        let xmlns: Xmlns = quick_xml::de::from_str(xml_str)?;
+
+        Err(quick_xml::DeError::Custom(format!(
+            "Invalid: {} document",
+            xmlns.value
+        )))
     }
 }

@@ -1,7 +1,9 @@
 use ::validator::Validate;
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize, Validate)]
-pub struct DirectDebitTransactionInformation29<A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> {
+pub struct DirectDebitTransactionInformation29<
+    A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+> {
     #[serde(rename = "PmtId")]
     #[validate]
     pub pmt_id: super::PaymentIdentification13,
@@ -96,16 +98,28 @@ pub struct DirectDebitTransactionInformation29<A: std::fmt::Debug + Default + Cl
     #[serde(rename = "Purp", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub purp: Option<super::Purpose2Choice>,
-    #[serde(default, rename = "RgltryRptg", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "RgltryRptg",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate(length(min = 0, max = 10))]
     pub rgltry_rptg: Vec<super::RegulatoryReporting3>,
-    #[serde(default, rename = "RltdRmtInf", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "RltdRmtInf",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate(length(min = 0, max = 10))]
     pub rltd_rmt_inf: Vec<super::RemittanceLocation7>,
     #[serde(rename = "RmtInf", skip_serializing_if = "Option::is_none")]
     #[validate]
     pub rmt_inf: Option<super::RemittanceInformation21>,
-    #[serde(default, rename = "SplmtryData", skip_serializing_if = "<[_]>::is_empty")]
+    #[serde(
+        default,
+        rename = "SplmtryData",
+        skip_serializing_if = "<[_]>::is_empty"
+    )]
     #[validate]
     pub splmtry_data: Vec<super::SupplementaryData1<A>>,
 }
