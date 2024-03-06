@@ -23,8 +23,15 @@ pub struct Document<
     pub xmlns: String,
 }
 
-impl<A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate> std::fmt::Display for Document<A> {
+impl<
+        A: std::fmt::Debug + Default + Clone + PartialEq + ::serde::Serialize + ::validator::Validate,
+    > std::fmt::Display for Document<A>
+{
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        write!(f, "{}", serde_json::to_string_pretty(&self).unwrap_or_default())
+        write!(
+            f,
+            "{}",
+            serde_json::to_string_pretty(&self).unwrap_or_default()
+        )
     }
 }
